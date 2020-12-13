@@ -4,4 +4,7 @@
 			"path": "."
 		}
 	],
+	"settings": {
+		"phpcs.standard": "PSR2"
+	},
 }
