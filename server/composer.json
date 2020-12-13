@@ -1,12 +1,27 @@
 {
-    "name": "laravel/laravel",
+    "name": "brainvation/get-the-trophy",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Play mini-games against your friends to get the trophy!",
     "keywords": [
-        "framework",
-        "laravel"
+        "game"
     ],
-    "license": "MIT",
+    "authors": [
+        {
+            "name": "Patrick Hessinger",
+            "email": "patrick.hessinger@brainvation.de",
+            "role": "Developer"
+        },
+        {
+            "name": "Dominik Kalus",
+            "role": "Contributing Ideas"
+        }
+    ],
+    "support":{
+        "email": "apps+get-the-trophy@brainvation.de"
+    },
+    "license": "proprietary",
+    "homepage": "https://get-the-trophy.bvhost.de",
+
     "require": {
         "php": "^7.3|^8.0",
         "fideloper/proxy": "^4.4",
@@ -36,7 +51,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/",
+            "GetTheTrophy\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }

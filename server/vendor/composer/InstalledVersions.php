@@ -29,8 +29,8 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '2a756d8c13d1bdc75b87eeed20a60b1e7ac284ab',
-    'name' => 'laravel/laravel',
+    'reference' => 'a2c8084dcb5727ac572c37c24bdf5d83053f1fcb',
+    'name' => 'brainvation/get-the-trophy',
   ),
   'versions' => 
   array (
@@ -42,6 +42,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '8d8f88b3b3830916be94292c1fbce84433efb1aa',
+    ),
+    'brainvation/get-the-trophy' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'a2c8084dcb5727ac572c37c24bdf5d83053f1fcb',
     ),
     'brick/math' => 
     array (
@@ -469,15 +478,6 @@ private static $installed = array (
       array (
       ),
       'reference' => '31747193c26ba0a9cb7929a912895d3cdefd10cf',
-    ),
-    'laravel/laravel' => 
-    array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '2a756d8c13d1bdc75b87eeed20a60b1e7ac284ab',
     ),
     'laravel/sail' => 
     array (
