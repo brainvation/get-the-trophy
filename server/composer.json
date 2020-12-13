@@ -24,10 +24,10 @@
 
     "require": {
         "php": "^7.3|^8.0",
+        "botman/driver-telegram": "^1.6",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
-        "irazasyed/telegram-bot-sdk": "^3.4",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5"
     },

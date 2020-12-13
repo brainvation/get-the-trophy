@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'a2c8084dcb5727ac572c37c24bdf5d83053f1fcb',
+    'reference' => '735f3740560c0ea5769405bb898dcb2b87690738',
     'name' => 'brainvation/get-the-trophy',
   ),
   'versions' => 
@@ -43,6 +43,24 @@ private static $installed = array (
       ),
       'reference' => '8d8f88b3b3830916be94292c1fbce84433efb1aa',
     ),
+    'botman/botman' => 
+    array (
+      'pretty_version' => '2.6.1',
+      'version' => '2.6.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '127f7dc0aef5bc0561f8a2a8a3b246fe951b63e7',
+    ),
+    'botman/driver-telegram' => 
+    array (
+      'pretty_version' => '1.6.2',
+      'version' => '1.6.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'a26872d971878b8e7163019036299a2eac2794a2',
+    ),
     'brainvation/get-the-trophy' => 
     array (
       'pretty_version' => 'dev-master',
@@ -50,7 +68,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'a2c8084dcb5727ac572c37c24bdf5d83053f1fcb',
+      'reference' => '735f3740560c0ea5769405bb898dcb2b87690738',
     ),
     'brick/math' => 
     array (
@@ -128,6 +146,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'ca90a3291eee1538cd48ff25163240695bd95448',
+    ),
+    'evenement/evenement' => 
+    array (
+      'pretty_version' => 'v3.0.1',
+      'version' => '3.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '531bfb9d15f8aa57454f5f0285b18bec903b8fb7',
     ),
     'facade/flare-client-php' => 
     array (
@@ -454,15 +481,6 @@ private static $installed = array (
         0 => 'v8.18.1',
       ),
     ),
-    'irazasyed/telegram-bot-sdk' => 
-    array (
-      'pretty_version' => 'v3.4.1',
-      'version' => '3.4.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '439552ebbbbbb9051f435c6556bb1c2ba5771425',
-    ),
     'kodova/hamcrest-php' => 
     array (
       'replaced' => 
@@ -506,15 +524,6 @@ private static $installed = array (
       ),
       'reference' => '11df9b36fd4f1d2b727a73bf14931d81373b9a54',
     ),
-    'league/event' => 
-    array (
-      'pretty_version' => '2.2.0',
-      'version' => '2.2.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'd2cc124cf9a3fab2bb4ff963307f60361ce4d119',
-    ),
     'league/flysystem' => 
     array (
       'pretty_version' => '1.1.3',
@@ -550,6 +559,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'f9eee5cec93dfb313a38b6b288741e84e53f02d5',
+    ),
+    'mpociot/pipeline' => 
+    array (
+      'pretty_version' => '1.0.2',
+      'version' => '1.0.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3584db4a0de68067b2b074edfadf6a48b5603a6b',
     ),
     'mtdowling/cron-expression' => 
     array (
@@ -850,6 +868,69 @@ private static $installed = array (
       ),
       'reference' => 'cd4032040a750077205918c86049aa0f43d22947',
     ),
+    'react/cache' => 
+    array (
+      'pretty_version' => 'v1.1.0',
+      'version' => '1.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '44a568925556b0bd8cacc7b49fb0f1cf0d706a0c',
+    ),
+    'react/dns' => 
+    array (
+      'pretty_version' => 'v1.4.0',
+      'version' => '1.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '665260757171e2ab17485b44e7ffffa7acb6ca1f',
+    ),
+    'react/event-loop' => 
+    array (
+      'pretty_version' => 'v1.1.1',
+      'version' => '1.1.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '6d24de090cd59cfc830263cfba965be77b563c13',
+    ),
+    'react/promise' => 
+    array (
+      'pretty_version' => 'v2.8.0',
+      'version' => '2.8.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f3cff96a19736714524ca0dd1d4130de73dbbbc4',
+    ),
+    'react/promise-timer' => 
+    array (
+      'pretty_version' => 'v1.6.0',
+      'version' => '1.6.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'daee9baf6ef30c43ea4c86399f828bb5f558f6e6',
+    ),
+    'react/socket' => 
+    array (
+      'pretty_version' => 'v1.6.0',
+      'version' => '1.6.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e2b96b23a13ca9b41ab343268dbce3f8ef4d524a',
+    ),
+    'react/stream' => 
+    array (
+      'pretty_version' => 'v1.1.1',
+      'version' => '1.1.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '7c02b510ee3f582c810aeccd3a197b9c2f52ff1a',
+    ),
     'rhumsaa/uuid' => 
     array (
       'replaced' => 
@@ -1000,6 +1081,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'c6c1022351a901512170118436c764e473f6de8c',
+    ),
+    'spatie/macroable' => 
+    array (
+      'pretty_version' => '1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '7a99549fc001c925714b329220dea680c04bfa48',
     ),
     'swiftmailer/swiftmailer' => 
     array (
@@ -1275,6 +1365,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '75a63c33a8577608444246075ea0af0d052e452a',
+    ),
+    'tightenco/collect' => 
+    array (
+      'pretty_version' => 'v8.18.1',
+      'version' => '8.18.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'c26215df39e3a671ebc2821e1e09445f0a7251fb',
     ),
     'tijsverkoyen/css-to-inline-styles' => 
     array (
