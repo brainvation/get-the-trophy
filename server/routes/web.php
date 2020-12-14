@@ -1,5 +1,6 @@
 <?php
 
+use GetTheTrophy\Http\Controllers\BotController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::match(['get', 'post'], '/bot', 'BotController@handle');
+Route::match(['get', 'post'], '/bot', [BotController::class, 'handle']);
