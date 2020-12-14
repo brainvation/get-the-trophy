@@ -33,7 +33,7 @@ class WelcomeConversation extends Conversation
             }
         }
         $this->ask($question, function (Answer $answer) {
-            $this->say("Hallo" . $answer->getText());
+            $this->say("Hallo " . $answer->getText());
         });
     }
 }

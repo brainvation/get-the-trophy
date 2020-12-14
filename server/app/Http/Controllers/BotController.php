@@ -16,8 +16,6 @@ class BotController extends BaseController
         $botman->hears('/start', function (BotMan $bot) {
             $bot->startConversation(new WelcomeConversation());
         });
-        
-        
 
         $botman->listen();
     }
