@@ -94,6 +94,7 @@ return array(
     'Cron\\' => array($vendorDir . '/dragonmantank/cron-expression/src/Cron'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
     'Brick\\Math\\' => array($vendorDir . '/brick/math/src'),
+    'BotMan\\Drivers\\Web\\' => array($vendorDir . '/botman/driver-web/src'),
     'BotMan\\Drivers\\Telegram\\' => array($vendorDir . '/botman/driver-telegram/src'),
     'BotMan\\BotMan\\' => array($vendorDir . '/botman/botman/src'),
     'Asm89\\Stack\\' => array($vendorDir . '/asm89/stack-cors/src'),

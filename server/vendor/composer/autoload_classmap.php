@@ -96,6 +96,8 @@ return array(
     'BotMan\\Drivers\\Telegram\\TelegramLocationDriver' => $vendorDir . '/botman/driver-telegram/src/TelegramLocationDriver.php',
     'BotMan\\Drivers\\Telegram\\TelegramPhotoDriver' => $vendorDir . '/botman/driver-telegram/src/TelegramPhotoDriver.php',
     'BotMan\\Drivers\\Telegram\\TelegramVideoDriver' => $vendorDir . '/botman/driver-telegram/src/TelegramVideoDriver.php',
+    'BotMan\\Drivers\\Web\\Providers\\WebServiceProvider' => $vendorDir . '/botman/driver-web/src/Providers/WebServiceProvider.php',
+    'BotMan\\Drivers\\Web\\WebDriver' => $vendorDir . '/botman/driver-web/src/WebDriver.php',
     'Brick\\Math\\BigDecimal' => $vendorDir . '/brick/math/src/BigDecimal.php',
     'Brick\\Math\\BigInteger' => $vendorDir . '/brick/math/src/BigInteger.php',
     'Brick\\Math\\BigNumber' => $vendorDir . '/brick/math/src/BigNumber.php',

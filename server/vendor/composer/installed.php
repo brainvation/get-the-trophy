@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '7201d6c069dd8aa10e4e361e33b35470e2150ad2',
+    'reference' => '33f926470a8ff7f04a074f31623e388cf35287eb',
     'name' => 'brainvation/get-the-trophy',
   ),
   'versions' => 
@@ -38,6 +38,15 @@
       ),
       'reference' => 'a26872d971878b8e7163019036299a2eac2794a2',
     ),
+    'botman/driver-web' => 
+    array (
+      'pretty_version' => '1.5.1',
+      'version' => '1.5.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '7399fd2994ee4c6c14c0a69268269e81fd2cd7f6',
+    ),
     'brainvation/get-the-trophy' => 
     array (
       'pretty_version' => 'dev-master',
@@ -45,7 +54,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '7201d6c069dd8aa10e4e361e33b35470e2150ad2',
+      'reference' => '33f926470a8ff7f04a074f31623e388cf35287eb',
     ),
     'brick/math' => 
     array (

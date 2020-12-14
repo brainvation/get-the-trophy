@@ -33,9 +33,9 @@ class ComposerStaticInitd0884987c4068beabdb3c181fecfac7d
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
-        '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'fe62ba7e10580d903cc46d808b5961a4' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Support/helpers.php',
         'caf31cc6ec7cf2241cb6f12c226c3846' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Support/alias.php',
+        '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
@@ -190,6 +190,7 @@ class ComposerStaticInitd0884987c4068beabdb3c181fecfac7d
         'B' => 
         array (
             'Brick\\Math\\' => 11,
+            'BotMan\\Drivers\\Web\\' => 19,
             'BotMan\\Drivers\\Telegram\\' => 24,
             'BotMan\\BotMan\\' => 14,
         ),
@@ -555,6 +556,10 @@ class ComposerStaticInitd0884987c4068beabdb3c181fecfac7d
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
         ),
+        'BotMan\\Drivers\\Web\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/botman/driver-web/src',
+        ),
         'BotMan\\Drivers\\Telegram\\' => 
         array (
             0 => __DIR__ . '/..' . '/botman/driver-telegram/src',
@@ -677,6 +682,8 @@ class ComposerStaticInitd0884987c4068beabdb3c181fecfac7d
         'BotMan\\Drivers\\Telegram\\TelegramLocationDriver' => __DIR__ . '/..' . '/botman/driver-telegram/src/TelegramLocationDriver.php',
         'BotMan\\Drivers\\Telegram\\TelegramPhotoDriver' => __DIR__ . '/..' . '/botman/driver-telegram/src/TelegramPhotoDriver.php',
         'BotMan\\Drivers\\Telegram\\TelegramVideoDriver' => __DIR__ . '/..' . '/botman/driver-telegram/src/TelegramVideoDriver.php',
+        'BotMan\\Drivers\\Web\\Providers\\WebServiceProvider' => __DIR__ . '/..' . '/botman/driver-web/src/Providers/WebServiceProvider.php',
+        'BotMan\\Drivers\\Web\\WebDriver' => __DIR__ . '/..' . '/botman/driver-web/src/WebDriver.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
         'Brick\\Math\\BigInteger' => __DIR__ . '/..' . '/brick/math/src/BigInteger.php',
         'Brick\\Math\\BigNumber' => __DIR__ . '/..' . '/brick/math/src/BigNumber.php',

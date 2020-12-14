@@ -18,4 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/webchat', function () {
+    return view('webchat');
+});
+
+Route::get('/chatframe', function () {
+    return view('chatframe');
+});
+
 Route::match(['get', 'post'], '/bot', [BotController::class, 'handle']);
