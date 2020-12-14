@@ -15,7 +15,7 @@ class WelcomeConversation extends Conversation
 
     public function askName()
     {
-        $user = $this->getUser();
+        $user = $this->getBot()->getUser();
         $question = Question::create('Servus! Und herzlich Willkommen ? Wie darf ich dich nennen?');
         if (!(empty($user->getFirstName()))) {
             $question->addButton($user->getFirstName());
