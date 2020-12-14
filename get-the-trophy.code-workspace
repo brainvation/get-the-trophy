@@ -7,6 +7,7 @@
 	"settings": {
 		"phpcs.standard": "PSR2",
 		"files.eol": "\n",
-		"intelephense.diagnostics.run": "onSave"
+		"intelephense.diagnostics.run": "onSave",
+		"editor.formatOnSave": true
 	},
 }

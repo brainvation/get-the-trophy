@@ -3,7 +3,6 @@
 namespace GetTheTrophy\Http\Controllers;
 
 use BotMan\BotMan\BotMan;
-use BotMan\BotMan\BotManFactory;
 use GetTheTrophy\Conversations\WelcomeConversation;
 use Illuminate\Routing\Controller as BaseController;
 
@@ -15,6 +14,11 @@ class BotController extends BaseController
 
         $botman->hears('/start', function (BotMan $bot) {
             $bot->startConversation(new WelcomeConversation());
+        });
+
+        $botman->hears('userinfo', function (BotMan $bot) {
+            $bot->reply(print_r($bot->getUser(), true));
+            $bot->reply('Driver: ' . $bot->getDriver()->getName());
         });
 
         $botman->listen();
