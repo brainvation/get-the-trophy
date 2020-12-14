@@ -123,6 +123,14 @@ Game Data (DB or not)
     - will create data needed for the GroupGameInstance
     - will trigger "setup wizard"
 
+TODO:
+    - Consider rate limiting: Send one mesage whereever possible
+    - LImit groups to max. 10 participants (rate limiting)
+    - Implement group feature to cut down on send messages
+    - or typesAndWaits...
+
+OPEN:
+    - How to skip questions in a conversation? / end game for a participant?
 
 InteractionController for setup
     - Game etc. has to provide a array with

@@ -29,7 +29,7 @@ class WelcomeConversation extends Conversation
                 $nameButtons[] = Button::create($user->getUsername())->value($user->getUsername());
             }
         } else {
-            $this->say('Leider konnte ich dir keine eindeutige ID zuordnen. Bitte versuche es erneut.');
+            $this->say("Leider konnte ich dir keine eindeutige ID zuordnen. Bitte versuche es erneut.");
             return;
         }
 
@@ -37,7 +37,7 @@ class WelcomeConversation extends Conversation
 
         //Add a Text that buttons are optional
         if (count($nameButtons) > 0) {
-            $questionText .= ' Wähle aus den unteren Vorschlägen aus oder gib deine eigene Antwort ein.';
+            $questionText .= "\n Wähle aus den unteren Vorschlägen aus oder gib deine eigene Antwort ein.";
         }
 
         //Build Question with buttons (if any)
