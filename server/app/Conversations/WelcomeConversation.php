@@ -15,13 +15,21 @@ class WelcomeConversation extends Conversation
 
     public function askName()
     {
-        $user = $this->getBot()->getUser();
-        $question = Question::create('Servus! Und herzlich Willkommen ? Wie darf ich dich nennen?');
-        if (!(empty($user->getFirstName()))) {
-            $question->addButton($user->getFirstName());
+        try {
+            $user = $this->getBot()->getUser();
+        } catch (\Throwable $th) {
+            $user = null;
         }
-        if (!(empty($user->getUsername()))) {
-            $question->addButton($user->getUsername());
+
+        $question = Question::create('Servus! Und herzlich Willkommen ? Wie darf ich dich nennen?');
+
+        if (!empty($user)) {
+            if (!(empty($user->getFirstName()))) {
+                $question->addButton($user->getFirstName());
+            }
+            if (!(empty($user->getUsername()))) {
+                $question->addButton($user->getUsername());
+            }
         }
         $this->ask($question, function (Answer $answer) {
             $this->say("Hallo" . $answer->getText());
