@@ -22,14 +22,14 @@ class WelcomeConversation extends Conversation
             $user = null;
         }
 
-        $question = Question::create('Servus! Und herzlich Willkommen ? Wie darf ich dich nennen?');
+        $question = Question::create('Servus! Und herzlich Willkommen! Wie darf ich dich nennen?');
 
         if (!empty($user)) {
             if (!(empty($user->getFirstName()))) {
-                $question->addButton(Button::create($user->getFirstName()));
+                $question->addButton(Button::create($user->getFirstName())->value($user->getFirstName()));
             }
             if (!(empty($user->getUsername()))) {
-                $question->addButton(Button::create($user->getUsername()));
+                $question->addButton(Button::create($user->getUsername())->value($user->getUsername()));
             }
         }
         $this->ask($question, function (Answer $answer) {
