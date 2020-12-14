@@ -4,6 +4,7 @@ namespace GetTheTrophy\Conversations;
 
 use BotMan\BotMan\Messages\Conversations\Conversation;
 use BotMan\BotMan\Messages\Incoming\Answer;
+use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 use BotMan\BotMan\Messages\Outgoing\Question;
 
 class WelcomeConversation extends Conversation
@@ -25,10 +26,10 @@ class WelcomeConversation extends Conversation
 
         if (!empty($user)) {
             if (!(empty($user->getFirstName()))) {
-                $question->addButton($user->getFirstName());
+                $question->addButton(Button::create($user->getFirstName()));
             }
             if (!(empty($user->getUsername()))) {
-                $question->addButton($user->getUsername());
+                $question->addButton(Button::create($user->getUsername()));
             }
         }
         $this->ask($question, function (Answer $answer) {
