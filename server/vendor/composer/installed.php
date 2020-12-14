@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '735f3740560c0ea5769405bb898dcb2b87690738',
+    'reference' => '7201d6c069dd8aa10e4e361e33b35470e2150ad2',
     'name' => 'brainvation/get-the-trophy',
   ),
   'versions' => 
@@ -45,7 +45,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '735f3740560c0ea5769405bb898dcb2b87690738',
+      'reference' => '7201d6c069dd8aa10e4e361e33b35470e2150ad2',
     ),
     'brick/math' => 
     array (
@@ -240,6 +240,15 @@
       array (
       ),
       'reference' => '8c3d0a3f6af734494ad8f6fbbee0ba92422859f3',
+    ),
+    'hashids/hashids' => 
+    array (
+      'pretty_version' => '4.1.0',
+      'version' => '4.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '8cab111f78e0bd9c76953b082919fc9e251761be',
     ),
     'illuminate/auth' => 
     array (
