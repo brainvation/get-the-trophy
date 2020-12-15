@@ -124,10 +124,18 @@ Game Data (DB or not)
     - will trigger "setup wizard"
 
 TODO:
+    - Contriubte Icon creator:
+        <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik
+        Creative Commons(Attribution-NonCommercial 3.0 unported)
     - Consider rate limiting: Send one mesage whereever possible
     - LImit groups to max. 10 participants (rate limiting)
     - Implement group feature to cut down on send messages
     - or typesAndWaits...
+    - Create a middleware that switches to Markdown V2 parsing
+    - Add secret key to Telegram bot URL and verify in program
+
+FUTURE:
+    - Telegram Login https://pociot.dev/12-use-the-telegram-login-widget
 
 OPEN:
     - How to skip questions in a conversation? / end game for a participant?

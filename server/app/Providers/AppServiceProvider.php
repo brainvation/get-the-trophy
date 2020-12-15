@@ -2,6 +2,7 @@
 
 namespace GetTheTrophy\Providers;
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -26,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        //Set default String Length for Database
+        Schema::defaultStringLength(191);
     }
 }
