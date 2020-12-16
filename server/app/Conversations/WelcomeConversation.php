@@ -19,17 +19,16 @@ class WelcomeConversation extends Conversation
             $this->askPrivacy();
         } else {
             $this->welcomeBack();
-            $this->getBot()->typesAndWaits(3);
+            $this->getBot()->typesAndWaits(2);
             $this->showMenu();
         }
     }
 
     public function welcomeNew()
     {
-        $this->say("Hallo und Herzlich Willkommen bei Hohl den Pokal!");
-        $this->getBot()->typesAndWaits(3);
-        $this->say("Ich bin ein automatisierter Bot und führe dich zusammen mit deinem Spielleiter durch das Spiel.
-                    \n\n*Hohl den Pokal!* ist ein interaktive Spiel mit deinen Freunden, dass du komplett online oder auch in Teilen im Real Life spielen kannst. 
+        $this->say("Hallo und willkommen bei Hohl den Pokal!
+                    \nIch bin ein automatisierter Bot und führe zusammen mit dem Spielleiter durch das Spiel.
+                    \n*Hohl den Pokal!* ist ein interaktives Spiel mit deinen Freunden, dass du komplett online oder auch in Teilen im Real Life spielen kannst. 
                     \nIhr spielt gemeinsam in mehreren Spielen gegeneinander, und der beste Spieler hohlt sich am Ende den Pokal. 🏆
                     \nIch hoffe du freust dich genauso sehr auf die nächste Partie wie ich! 🤩");
     }
@@ -54,15 +53,15 @@ class WelcomeConversation extends Conversation
     public function askPrivacy()
     {
         $questionText = "Im Rahmen dieses Bots verarbeiten und speichern wir Daten von dir.
-                        \nDies ist teilweise technisch notwendig oder dient Komfort (Anzeige deiner Ergebnisse und Namens bei Spielständen).
-                        \nKeine Angst, wir verkaufen deine Daten nicht. Wie geben Sie nur an Dritte weiter, wenn es notwendig ist (wie z.B. an die verwendeten Platformen um die Nachrichten/Transaktionen abzuwickeln oder an deine Mitspieler.
-                        \nDie ausführliche Datenschutzerklärung findest du unter: https://get-the-trophy.bvhost.de/privacy)
-                        \n\n Stimmst du dem zu?";
+                        \nDies ist teilweise technisch notwendig oder dient dem Komfort (z.B. Anzeige deiner Ergebnisse und Namens bei Spielständen).
+                        \nKeine Angst, wir verkaufen deine Daten nicht. Wie geben Sie nur an Dritte weiter, wenn es notwendig ist (wie z.B. an die verwendeten Platformen um die Nachrichten/Transaktionen abzuwickeln oder an deine Mitspieler.=
+                        \nDie ausführliche Datenschutzerklärung findest du unter: https://get-the-trophy.bvapps.de/privacy
+                        \nStimmst du dem zu?";
 
         $question = Question::create($questionText)
             ->addButtons([
                 Button::create('Ich stimme der Datenverarbeitung zu.')->value('yes'),
-                Button::create('Ich stimme nicht zu.')->value('no')
+                Button::create('Ich stimme nicht zu.')->value('/deleteme')
             ]);
 
         $this->ask($question, [
@@ -85,9 +84,11 @@ class WelcomeConversation extends Conversation
                 }
             ],
             [
-                'pattern' => 'nah|no|nope|nein',
+                'pattern' => 'nah|no|nope|nein|/deleteMe',
                 'callback' => function () {
-                    $this->say('Schade, dann kannst du diesen Dienst leider nicht nutzen. 😞');
+                    $this->say("Schade, dann kannst du diesen Dienst leider nicht nutzen. 😞
+                                \nAuf Wiedersehen!
+                                \nUm neu zu starten schreibe /start");
                 }
             ],
             [
