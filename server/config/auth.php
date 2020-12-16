@@ -14,8 +14,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'users',
+        'guard' => 'messaging',
+        'passwords' => 'external_users',
     ],
 
     /*
@@ -46,6 +46,12 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+        'messaging' => [
+            'driver' => 'messaging',
+            'provider' => 'external_users',
+        ],
+
     ],
 
     /*
@@ -70,6 +76,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+        'external_users' => [
+            'driver' => 'external',
+            'model' =>  GetTheTrophy\Models\User::class,
+        ]
 
         // 'users' => [
         //     'driver' => 'database',

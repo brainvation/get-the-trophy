@@ -54,7 +54,8 @@ class WelcomeConversation extends Conversation
     {
         $questionText = "Im Rahmen dieses Bots verarbeiten und speichern wir Daten von dir.
                         \nDies ist teilweise technisch notwendig oder dient dem Komfort (z.B. Anzeige deiner Ergebnisse und Namens bei Spielständen).
-                        \nKeine Angst, wir verkaufen deine Daten nicht. Wie geben Sie nur an Dritte weiter, wenn es notwendig ist (wie z.B. an die verwendeten Platformen um die Nachrichten/Transaktionen abzuwickeln oder an deine Mitspieler.=
+                        \nKeine Angst, wir verkaufen deine Daten nicht. Wie geben Sie nur an Dritte weiter, wenn es notwendig ist (wie z.B. an die verwendeten Platformen um die Nachrichten/Transaktionen abzuwickeln oder an deine Mitspieler.)
+                        \nDu kannst jederzeit deine Daten mit dem Befehl /deleteme löschen.
                         \nDie ausführliche Datenschutzerklärung findest du unter: https://get-the-trophy.bvapps.de/privacy
                         \nStimmst du dem zu?";
 
@@ -75,8 +76,6 @@ class WelcomeConversation extends Conversation
                         'privacy_consent'   => true
                     ]);
 
-                    //And log them in
-                    Auth::login($internalUser);
                     //And reply
                     $this->say('Großartig! 👍 Dann können wir fortfahren.');
                     $this->getBot()->typesAndWaits(2);
@@ -135,10 +134,11 @@ class WelcomeConversation extends Conversation
         $this->ask($question, function (Answer $answer) {
             //Looks like we have to query the user this way
             //as the Auth does not take effect that soon / in the same function...
-            $internalUser =  $user = User::where([
+            /*$internalUser =  $user = User::where([
                 'external_service' => $this->getBot()->getDriver()->getName(),
                 'external_id' => $this->getBot()->getUser()->getId()
-            ])->first();
+            ])->first();*/
+            $internalUser = User::find(Auth::id());
 
             //Set Name
             $internalUser->name = $answer->getText();
