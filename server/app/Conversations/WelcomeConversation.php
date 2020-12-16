@@ -18,8 +18,6 @@ class WelcomeConversation extends Conversation
             $this->getBot()->typesAndWaits(6);
             $this->askPrivacy();
         } else {
-            $this->welcomeBack();
-            $this->getBot()->typesAndWaits(2);
             $this->showMenu();
         }
     }
@@ -31,11 +29,6 @@ class WelcomeConversation extends Conversation
                     \n*Hohl den Pokal!* ist ein interaktives Spiel mit deinen Freunden, dass du komplett online oder auch in Teilen im Real Life spielen kannst. 
                     \nIhr spielt gemeinsam in mehreren Spielen gegeneinander, und der beste Spieler hohlt sich am Ende den Pokal. 🏆
                     \nIch hoffe du freust dich genauso sehr auf die nächste Partie wie ich! 🤩");
-    }
-
-    public function welcomeBack()
-    {
-        $this->say('');
     }
 
     public function showMenu()
