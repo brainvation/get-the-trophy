@@ -7,6 +7,7 @@ use GetTheTrophy\Conversations\WelcomeConversation;
 use GetTheTrophy\Models\User;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class BotController extends BaseController
 {
@@ -19,7 +20,6 @@ class BotController extends BaseController
             //Check if we know the user
             if (Auth::check()) {
                 //If the user has a session, process the commands
-                $bot->reply('has auth');
                 $this->processCommands($bot, $message);
             } else {
                 //If not -> go to Welcome Conversation
@@ -32,16 +32,17 @@ class BotController extends BaseController
 
     protected function processCommands(BotMan $bot, string $message)
     {
-        if ($message == "/deleteme") {
+        $messageLower = Str::lower($message);
+        if ($messageLower == "/deleteme") {
             User::destroy(Auth::id());
             $bot->reply("Deine Daten wurden gelöscht.
                         \nDU kannst jederzeit disesen Bot neu nutzen, indem du mit dem Befehl /start neu startest.");
-        } elseif ($message == "/debuginfo") {
+        } elseif ($messageLower == "/debuginfo") {
             $debuginfo =
                 'User Info: ' . print_r($bot->getUser(), true)
                 . '\nDriver: ' . $bot->getDriver()->getName();
             $bot->reply($debuginfo);
-        } elseif (preg_match('/\/start|start|hi|hallo|👋|hello|hey|servus|moin/', $message)) {
+        } elseif (preg_match('/\/start|start|hi|hallo|👋|hello|hey|servus|moin/', $messageLower)) {
             $bot->startConversation(new WelcomeConversation());
         } else {
             $bot->reply('Das hab ich leider nicht verstanden');
