@@ -33,7 +33,8 @@ class WelcomeConversation extends Conversation
 
     public function showMenu()
     {
-        $menuText = "Willkommen, " . Auth::user()->name . "! 👋
+        //We have to query the database here for the name, as it might have just been changed in this conversation
+        $menuText = "Willkommen, " . User::find(Auth::id())->name . "! 👋
                     \nWas möchtest du tun?";
         $question = Question::create($menuText)
             ->addButtons([
