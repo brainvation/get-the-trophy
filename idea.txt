@@ -53,33 +53,16 @@ Future:
 TO CHECK: Are we allowed to store Data from Telegram etc.?
 TODO: Data consent when starting bot
 
-Data Model
+
 
 User
-- name (cache or own)
-- DataConsent: Yes/No
-- 1:x UserIdentifier
-
-Note:
      Can only have one active Turn
      Cannot join a competition when another one active
      What happens if you leave a game?
         for now: player has to wait for end
 
-UserIdentifier
-- PK Platform
-- PK ID
+Data Model
 
-Group
-- PK Platform
-- PK Identifier
-- Name (cache or own)
-- 1:x users with Pivot Role
-
-Compentition
-- Group
-- State
-- GameInstances
 
 GroupGameInstance
 - SeqNo

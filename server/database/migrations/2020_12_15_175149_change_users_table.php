@@ -15,6 +15,7 @@ class ChangeUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropUnique('users_email_unique');
+            $table->string('name')->nullable()->change();
             $table->string('email')->nullable()->change();
             $table->string('password')->nullable()->change();
             $table->string('external_service')
@@ -22,7 +23,7 @@ class ChangeUsersTable extends Migration
             $table->string('external_id')
                 ->comment('User ID provided by the external service (only one, 
                     otherwise we would not know where to send the notification');
-            $table->boolean('data_consent');
+            $table->boolean('privacy_consent');
             $table->unique(['external_service', 'external_id'], 'users_external_id');
         });
     }
@@ -37,6 +38,7 @@ class ChangeUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropUnique('users_external_id');
             $table->string('email')->unique()->nullable(false)->change();
+            $table->string('name')->nullable(false)->change();
             $table->string('password')->nullable(false)->change();
             $table->dropColumn(['external_service', 'external_id', 'data_consent']);
         });
