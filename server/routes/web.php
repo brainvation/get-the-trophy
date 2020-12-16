@@ -14,16 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'welcome');
+Route::view('/privacy', 'privacy');
 
-Route::get('/webchat', function () {
-    return view('webchat');
-});
-
-Route::get('/chatframe', function () {
-    return view('chatframe');
-});
+//To be removed after DEV-stage
+Route::view('/webchat', 'webchat');
+Route::view('/chatframe', 'chatframe');
 
 Route::match(['get', 'post'], '/bot', [BotController::class, 'handle']);
