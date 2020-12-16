@@ -35,12 +35,14 @@ class WelcomeConversation extends Conversation
 
     public function welcomeBack()
     {
-        $this->say('Willkommen zurück, ' . Auth::user()->name . '! 👋');
+        $this->say('');
     }
 
     public function showMenu()
     {
-        $question = Question::create('Was möchtest du tun?')
+        $menuText = "Willkommen, " . Auth::user()->name . "! 👋
+                    \nWas möchtest du tun?";
+        $question = Question::create($menuText)
             ->addButtons([
                 Button::create('Einem Wettbewerb beitreten')->value('/join'),
                 Button::create('Einen Wettbewerb starten')->value('/create')
@@ -143,8 +145,6 @@ class WelcomeConversation extends Conversation
             //Set Name
             $internalUser->name = $answer->getText();
             $internalUser->save();
-            $this->say("Nett dich kennenzulernen, " . $internalUser->name . "! 😊");
-            $this->getBot()->typesAndWaits(3);
             $this->showMenu();
         });
     }

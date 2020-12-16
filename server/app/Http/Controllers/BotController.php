@@ -36,7 +36,7 @@ class BotController extends BaseController
         if ($messageLower == "/deleteme") {
             User::destroy(Auth::id());
             $bot->reply("Deine Daten wurden gelöscht.
-                        \nDU kannst jederzeit disesen Bot neu nutzen, indem du mit dem Befehl /start neu startest.");
+                        \nDu kannst jederzeit disesen Bot neu nutzen, indem du ihn mit dem Befehl /start neu startest.");
         } elseif ($messageLower == "/debuginfo") {
             $debuginfo =
                 'User Info: ' . print_r($bot->getUser(), true)
