@@ -3,18 +3,18 @@
     <head>
         <meta charset="utf-8">
         <title>Hohl den Pokal! - Datenschutz</title>
+        {{ HTML::script('js/app.js'); }}
+        {{ HTML::style('css/app.css'); }}
     </head>
     <body>
         <p>
-            Dieser Bot führt dich durch "Hohl den Pokal!" das interaktive Spiel für die nächste 
-            Party mit deinen Freunden. 
+            Die Datenschutz-Erklärung ist noch nicht erstellt.
         </p>
         <p>
-            Ihr spielt gemeinsam in mehreren Spielen gegeneinander, und der beste hohl sich den Pokal. 
-            Wirst du es diesmal sein?
+            Dies hat vor allem damit zu tun, dass die App noch nicht für die Öffentlichkeit freigegeben ist.
         </p>
         <p>
-            Wir befinden uns noch in der Entwicklung. Bald gibt es hier mehr.
+            Gebe keine Echtdaten ein und verwende den Bot erst, wenn er offiziell freigeeben ist.
         </p>
     </body>
 </html>

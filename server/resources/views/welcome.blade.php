@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>Hohl den Pokal!</title>
+        {{ HTML::script('js/app.js'); }}
+        {{ HTML::style('css/app.css'); }}
     </head>
     <body>
         <p>
@@ -14,7 +16,8 @@
             Wirst du es diesmal sein?
         </p>
         <p>
-            Wir befinden uns noch in der Entwicklung. Bald gibt es hier mehr.
+            Wir befinden uns noch in der Entwicklung. 
+            Bitte nutze den Bot noch nicht, wenn du nicht zu den Alpha-Testern gehörst.
         </p>
     </body>
 </html>
