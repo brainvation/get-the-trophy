@@ -8,6 +8,7 @@
 		"phpcs.standard": "PSR2",
 		"files.eol": "\n",
 		"intelephense.diagnostics.run": "onSave",
-		"editor.formatOnSave": true
+		"editor.formatOnSave": true,
+		"cSpell.language": "de,en"
 	},
 }

@@ -15,12 +15,12 @@ return [
         'deleteme' => [
             'buttonText' => 'Meine Daten löschen',
             'success' => "Deine Daten wurden gelöscht.
-\nDu kannst jederzeit disesen Bot neu nutzen, indem du ihn mit dem Befehl /start neu startest."
+\nDu kannst jederzeit diesen Bot neu nutzen, indem du ihn mit dem Befehl /start neu startest."
         ],
         'debuginfo' => [
             'buttonText' => 'Informationen zur Fehleranalyse anzeigen'
         ],
-        'unknown' => "Hmm. 🤔 Sorry, ich weiß leider nicht, was du vom mit willst. 😕
-\nMit dem Befehl /start kommst du zum Startmenü"
+        'unknown' => "Hmm. 🤔 Sorry, ich weiß leider nicht, was du vom mir willst. 😕
+\nMit dem Befehl /start kommst du zum Startmenü..."
     ]
 ];
