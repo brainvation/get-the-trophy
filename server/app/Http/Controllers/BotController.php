@@ -35,17 +35,14 @@ class BotController extends BaseController
         $messageLower = Str::lower($message);
         if ($messageLower == "/deleteme") {
             User::destroy(Auth::id());
-            $bot->reply("Deine Daten wurden gelöscht.
-                        \nDu kannst jederzeit disesen Bot neu nutzen, indem du ihn mit dem Befehl /start neu startest.");
+            $bot->reply(__('main.commands.deleteme.success'));
         } elseif ($messageLower == "/debuginfo") {
-            $debuginfo =
-                'User Info: ' . print_r($bot->getUser(), true)
-                . '\nDriver: ' . $bot->getDriver()->getName();
+            $debuginfo = print_r($bot->getUser(), true);
             $bot->reply($debuginfo);
-        } elseif (preg_match('/\/start|start|hi|hallo|👋|hello|hey|servus|moin/', $messageLower)) {
+        } elseif (preg_match(__('main.commands.start.pattern'), $messageLower)) {
             $bot->startConversation(new WelcomeConversation());
         } else {
-            $bot->reply('Das hab ich leider nicht verstanden');
+            $bot->reply(__('main.commands.unknown'));
         }
         /*
         $botman->hears('testsend', function (BotMan $bot) {

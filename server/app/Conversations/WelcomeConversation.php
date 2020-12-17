@@ -24,46 +24,38 @@ class WelcomeConversation extends Conversation
 
     public function welcomeNew()
     {
-        $this->say("Hallo und willkommen bei Hohl den Pokal!
-                    \nIch bin ein automatisierter Bot und führe zusammen mit dem Spielleiter durch das Spiel.
-                    \n*Hohl den Pokal!* ist ein interaktives Spiel mit deinen Freunden, dass du komplett online oder auch in Teilen im Real Life spielen kannst. 
-                    \nIhr spielt gemeinsam in mehreren Spielen gegeneinander, und der beste Spieler hohlt sich am Ende den Pokal. 🏆
-                    \nIch hoffe du freust dich genauso sehr auf die nächste Partie wie ich! 🤩");
+        $this->say(__("conversations/welcome.greeting.new"));
     }
 
     public function showMenu()
     {
         //We have to query the database here for the name, as it might have just been changed in this conversation
-        $menuText = "Willkommen, " . User::find(Auth::id())->name . "! 👋
-                    \nWas möchtest du tun?";
+        $menuText = __(
+            "conversations/welcome.greeting.known",
+            ['name' => User::find(Auth::id())->name]
+        ) . PHP_EOL . __("conversations/welcome.menu.selection_prompt");
         $question = Question::create($menuText)
             ->addButtons([
-                Button::create('Einem Wettbewerb beitreten')->value('/join'),
-                Button::create('Einen Wettbewerb starten')->value('/create')
+                Button::create(__('main.commands.join.buttonText'))->value('/join'),
+                Button::create(__('main.commands.create.buttonText'))->value('/create')
             ]);
-        $this->ask($question, function (Answer $answer) {
-            $this->say('To be continued...');
-        });
+        //No ask, as this is the main menu and we can process the answer any time
+        $this->say($question);
     }
 
     public function askPrivacy()
     {
-        $questionText = "Im Rahmen dieses Bots verarbeiten und speichern wir Daten von dir.
-                        \nDies ist teilweise technisch notwendig oder dient dem Komfort (z.B. Anzeige deiner Ergebnisse und Namens bei Spielständen).
-                        \nKeine Angst, wir verkaufen deine Daten nicht. Wie geben Sie nur an Dritte weiter, wenn es notwendig ist (wie z.B. an die verwendeten Platformen um die Nachrichten/Transaktionen abzuwickeln oder an deine Mitspieler.)
-                        \nDu kannst jederzeit deine Daten mit dem Befehl /deleteme löschen.
-                        \nDie ausführliche Datenschutzerklärung findest du unter: https://get-the-trophy.bvapps.de/privacy
-                        \nStimmst du dem zu?";
+        $questionText = __("conversations/welcome.privacy.prompt");
 
         $question = Question::create($questionText)
             ->addButtons([
-                Button::create('Ich stimme der Datenverarbeitung zu.')->value('yes'),
-                Button::create('Ich stimme nicht zu.')->value('/deleteme')
+                Button::create(__("conversations/welcome.privacy.yes"))->value('yes'),
+                Button::create(__("conversations/welcome.privacy.no"))->value('/deleteme')
             ]);
 
         $this->ask($question, [
             [
-                'pattern' => 'yes|yep|ja|ok|okay',
+                'pattern' => __("conversations/welcome.privacy.yes_pattern"),
                 'callback' => function () {
                     //Great! Let's create user
                     $internalUser = User::create([
@@ -73,23 +65,21 @@ class WelcomeConversation extends Conversation
                     ]);
 
                     //And reply
-                    $this->say('Großartig! 👍 Dann können wir fortfahren.');
+                    $this->say(__("conversations/welcome.privacy.agreed"));
                     $this->getBot()->typesAndWaits(2);
                     $this->askName();
                 }
             ],
             [
-                'pattern' => 'nah|no|nope|nein|/deleteMe',
+                'pattern' => __("conversations/welcome.privacy.no_pattern"),
                 'callback' => function () {
-                    $this->say("Schade, dann kannst du diesen Dienst leider nicht nutzen. 😞
-                                \nAuf Wiedersehen!
-                                \nUm neu zu starten schreibe /start");
+                    $this->say(__("conversations/welcome.privacy.declined"));
                 }
             ],
             [
                 'pattern' => '.*',
                 'callback' => function () {
-                    $this->say('Das hab ich leider nicht verstanden. Antworte bitte mit Ja oder Nein.');
+                    $this->say(__('conversations/welcome.privacy.answer_unclear'));
                     $this->repeat();
                 }
             ]
@@ -115,12 +105,11 @@ class WelcomeConversation extends Conversation
             }
         }
 
-        $questionText = "Wie darf ich dich nennen?
-                        \nDiesen Namem verwende ich auch für Spielstände, Menüs und die Kommunikation mit Mitspielern.";
+        $questionText = __('conversations/welcome.name.prompt');
 
         //Add a Text that buttons are optional
         if (count($nameButtons) > 0) {
-            $questionText .= "\nMir wurden da schon ein paar Tipps gegeben. Wähle gerne einfach hier aus oder gib deine eigene Antwort ein.";
+            $questionText .= __('conversations/welcome.name.buttons_available');
         }
 
         //Build Question with buttons (if any)
@@ -128,12 +117,6 @@ class WelcomeConversation extends Conversation
             ->addButtons($nameButtons);
 
         $this->ask($question, function (Answer $answer) {
-            //Looks like we have to query the user this way
-            //as the Auth does not take effect that soon / in the same function...
-            /*$internalUser =  $user = User::where([
-                'external_service' => $this->getBot()->getDriver()->getName(),
-                'external_id' => $this->getBot()->getUser()->getId()
-            ])->first();*/
             $internalUser = User::find(Auth::id());
 
             //Set Name

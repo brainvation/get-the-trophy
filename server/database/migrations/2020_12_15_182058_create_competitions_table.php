@@ -17,7 +17,7 @@ class CreateCompetitionsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name')
-                ->comment('Optional, can be used for authentification and in fancy texts/announcements');
+                ->comment('Optional, can be used for identification and in fancy texts/announcements');
             $table->char('state', 1)
                 ->comment('State of competition: (I)nitial, (C)reated, (W)aiting, (A)ctive, (D)one');
             $table->string('linked_channel_service')
