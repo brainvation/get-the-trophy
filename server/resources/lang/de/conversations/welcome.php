@@ -3,7 +3,7 @@
 return [
     'greeting' => [
         'new' => "Servus und willkommen bei Hol den Pokal!
-\nIch bin ein automatisierter Bot und führe zusammen mit dem Spielleiter durch das Spiel.
+\nIch bin ein Bot und führe automatisiert durch das Spiel.
 \n*Hol den Pokal!* ist ein interaktives Spiel mit deinen Freunden, dass du komplett online oder auch in Teilen im Real Life spielen kannst. 
 \nIhr spielt gemeinsam in mehreren Spielen gegeneinander, und der beste Spieler holt sich am Ende den Pokal. 🏆
 \nIch hoffe du freust dich genauso sehr auf die nächste Partie wie ich! 🤩",
@@ -16,7 +16,7 @@ return [
         'prompt' => "Im Rahmen dieses Bots verarbeiten und speichern wir Daten von dir.
 \nDies ist teilweise technisch notwendig oder dient dem Komfort (z.B. Anzeige deiner Ergebnisse und Namens bei Spielständen).
 \nKeine Angst, wir verkaufen deine Daten nicht. Wie geben sie nur an Dritte weiter, wenn es notwendig ist (wie z.B. an die verwendeten Plattformen um die Nachrichten/Transaktionen abzuwickeln oder an deine Mitspieler.)
-\nDu kannst jederzeit deine Daten mit dem Befehl /deleteme löschen.
+\nDu kannst deine Daten mit dem Befehl /deleteme löschen.
 \nDie ausführliche Datenschutzerklärung findest du unter: https://get-the-trophy.bvapps.de/privacy
 \nStimmst du dem zu?",
         'yes' => 'Ich stimme der Datenverarbeitung zu.',

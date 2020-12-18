@@ -37,7 +37,8 @@ class WelcomeConversation extends Conversation
         $question = Question::create($menuText)
             ->addButtons([
                 Button::create(__('main.commands.join.buttonText'))->value('/join'),
-                Button::create(__('main.commands.create.buttonText'))->value('/create')
+                Button::create(__('main.commands.create.buttonText'))->value('/create'),
+                Button::create(__('Dies ist ein furchtbar langer Button-Text um zu testen was passiert wenn der so lang ist und ob das Probleme macht oder nicht. Das muss auch mal getestet werden.'))->value('/debuginfo')
             ]);
         //No ask, as this is the main menu and we can process the answer any time
         $this->say($question);

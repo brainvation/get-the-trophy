@@ -15,7 +15,12 @@ class BotController extends BaseController
     {
         $botman = app('BotMan\BotMan\BotMan');
 
-        //Here we react to everything and route laster...
+        //Global stop command
+        $botman->hears('/stop|/start', function (BotMan $bot) {
+            $bot->reply(__('main.commands.stop.answer'));
+        })->stopsConversation();
+
+        //Here we react to everything and route later...
         $botman->hears('(.*)', function (BotMan $bot, string $message) {
             //Check if we know the user
             if (Auth::check()) {

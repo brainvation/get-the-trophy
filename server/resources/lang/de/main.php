@@ -3,7 +3,7 @@
 return [
     'commands' => [
         'start' => [
-            'buttonText' => 'Startmenu',
+            'buttonText' => 'Startmenü',
             'pattern' => '/\/start|start|hi|hallo|👋|hello|hey|servus|moin/'
         ],
         'join' => [
@@ -11,6 +11,10 @@ return [
         ],
         'create' => [
             'buttonText' => 'Wettbewerb starten'
+        ],
+        'stop' => [
+            'buttonText' => 'Aktuellen Dialog stoppen',
+            'answer' => 'Gestoppt. Du gelangst zurück zum Startmenü mit /start'
         ],
         'deleteme' => [
             'buttonText' => 'Meine Daten löschen',
