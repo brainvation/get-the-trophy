@@ -22,7 +22,7 @@ return [
         'yes' => 'Ich stimme der Datenverarbeitung zu.',
         'yes_pattern' => 'yes|yep|ja|ok|okay|passt',
         'no' => 'Ich stimme nicht zu.',
-        'no_pattern' => 'nah|no|nope|nein|ne|nicht|/deleteMe',
+        'no_pattern' => 'no|nah|nope|nein|ne|nicht|/deleteMe',
         'agreed' => 'Großartig! 👍 Dann können wir fortfahren.',
         'declined' => "Schade, dann kannst du diesen Dienst leider nicht nutzen. 😞
 \nUm neu zu starten schreibe /start",

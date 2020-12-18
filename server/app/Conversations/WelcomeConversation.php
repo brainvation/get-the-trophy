@@ -51,7 +51,7 @@ class WelcomeConversation extends Conversation
         $question = Question::create($questionText)
             ->addButtons([
                 Button::create(__("conversations/welcome.privacy.yes"))->value('yes'),
-                Button::create(__("conversations/welcome.privacy.no"))->value('/deleteme')
+                Button::create(__("conversations/welcome.privacy.no"))->value('no')
             ]);
 
         $this->ask($question, [

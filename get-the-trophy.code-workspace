@@ -9,6 +9,10 @@
 		"files.eol": "\n",
 		"intelephense.diagnostics.run": "onSave",
 		"editor.formatOnSave": true,
-		"cSpell.language": "de,en"
+		"cSpell.language": "de,en",
+		"cSpell.words": [
+			"debuginfo",
+			"deleteme"
+		]
 	},
 }

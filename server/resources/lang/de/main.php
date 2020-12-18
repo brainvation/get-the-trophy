@@ -23,6 +23,7 @@ return [
         ],
         'debuginfo' => [
             'buttonText' => 'Informationen zur Fehleranalyse anzeigen'
+            'answer' => 'User Info: :userinfo';
         ],
         'unknown' => "Hmm. 🤔 Sorry, ich weiß leider nicht, was du vom mir willst. 😕
 \nMit dem Befehl /start kommst du zum Startmenü..."
