@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable PSR1.Classes.ClassDeclaration -- will break Laravel Migration
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;

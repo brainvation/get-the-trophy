@@ -55,7 +55,10 @@ class BotController extends BaseController
         } elseif ($messageLower == "/debuginfo") {
             $debuginfo = print_r($bot->getUser(), true);
             $bot->reply($debuginfo);
-        } elseif (preg_match(__('main.commands.start.pattern'), $messageLower)) {
+        } elseif (
+            preg_match(__('main.commands.start.pattern'), $messageLower)
+            || preg_match(__('main.commands.settings.pattern'), $messageLower)
+        ) {
             $bot->startConversation(new WelcomeConversation());
         } else {
             $bot->reply(__('main.commands.unknown'));

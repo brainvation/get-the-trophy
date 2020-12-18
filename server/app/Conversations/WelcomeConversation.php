@@ -8,16 +8,25 @@ use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 use BotMan\BotMan\Messages\Outgoing\Question;
 use GetTheTrophy\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class WelcomeConversation extends Conversation
 {
     public function run()
     {
         if (Auth::guest()) {
+            //Initial Setup for new users
             $this->welcomeNew();
             $this->getBot()->typesAndWaits(6);
             $this->askPrivacy();
+        } elseif (preg_match(
+            __('main.commands.settings.pattern'),
+            Str::lower($this->getBot()->getMessage())
+        )) {
+            //Change Settings?
+            $this->askName();
         } else {
+            //In any other case, just show menu
             $this->showMenu();
         }
     }
