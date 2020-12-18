@@ -5,7 +5,7 @@ return [
     'commands' => [
         'start' => [
             'buttonText' => 'Startmenü',
-            'pattern' => '/\/start|start|hi|hallo|👋|hello|hey|servus|moin'
+            'pattern' => '/\/start|start|hi|hallo|👋|hello|hey|servus|moin/'
         ],
         'join' => [
             'buttonText' => 'Wettbewerb beitreten'

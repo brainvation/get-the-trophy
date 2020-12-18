@@ -21,7 +21,7 @@ class WelcomeConversation extends Conversation
             $this->askPrivacy();
         } elseif (preg_match(
             __('main.commands.settings.pattern'),
-            Str::lower($this->getBot()->getMessage())
+            Str::lower($this->getBot()->getMessage()->getText())
         )) {
             //Change Settings?
             $this->askName();
