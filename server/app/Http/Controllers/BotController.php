@@ -15,8 +15,19 @@ class BotController extends BaseController
     {
         $botman = app('BotMan\BotMan\BotMan');
 
-        //Global stop commands
-        $this->processStopCommands($botman);
+        //Exception Handling
+        $botman->exception(Exception::class, function ($exception, $bot) {
+            $bot->reply(__('main.commands.unknown', ['exception' => print_r($exception, true)]));
+        });
+
+        //Global Stop Commands
+        $botman->hears('/stop|/start|/deleteme', function (BotMan $bot) {
+            //empty, as it will be processed later
+        })->stopsConversation();
+        //Global Skip Commands
+        $botman->hears('/debuginfo', function (BotMan $bot) {
+            //empty as it will be processed later
+        })->skipsConversation();
 
         //Here we react to everything and route later...
         $botman->hears('(.*)', function (BotMan $bot, string $message) {
@@ -36,7 +47,15 @@ class BotController extends BaseController
     protected function processCommands(BotMan $bot, string $message)
     {
         $messageLower = Str::lower($message);
-        if (preg_match(__('main.commands.start.pattern'), $messageLower)) {
+        if ($messageLower == "/deleteme") {
+            User::destroy(Auth::id());
+            $bot->reply(__('main.commands.deleteme.success'));
+        } elseif ($messageLower == '/stop') {
+            $bot->reply(__('main.commands.stop.answer'));
+        } elseif ($messageLower == "/debuginfo") {
+            $debuginfo = print_r($bot->getUser(), true);
+            $bot->reply($debuginfo);
+        } elseif (preg_match(__('main.commands.start.pattern'), $messageLower)) {
             $bot->startConversation(new WelcomeConversation());
         } else {
             $bot->reply(__('main.commands.unknown'));
@@ -49,23 +68,5 @@ class BotController extends BaseController
                 $bot->loadDriver('Telegram')
             );
         }); */
-    }
-    protected function processStopCommands(BotMan $botman)
-    {
-        $botman->hears('/stop', function (BotMan $bot) {
-            $bot->reply(__('main.commands.stop.answer'));
-        })->stopsConversation();
-        $botman->hears('/deleteme', function (BotMan $bot) {
-            User::destroy(Auth::id());
-            $bot->reply(__('main.commands.deleteme.success'));
-        })->stopsConversation();
-        $botman->hears('/start', function (BotMan $bot) {
-            $bot->startConversation(new WelcomeConversation());
-        })->stopsConversation();
-        $botman->hears('/debuginfo', function (BotMan $bot) {
-            $bot->reply(__('main.commands.debuginfo.answer'), [
-                'userinfo' => print_r($bot->getUser(), true)
-            ]);
-        })->skipsConversation();
     }
 }

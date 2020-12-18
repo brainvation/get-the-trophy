@@ -22,10 +22,13 @@ return [
 \nDu kannst jederzeit diesen Bot neu nutzen, indem du ihn mit dem Befehl /start neu startest."
         ],
         'debuginfo' => [
-            'buttonText' => 'Informationen zur Fehleranalyse anzeigen'
-            'answer' => 'User Info: :userinfo';
+            'buttonText' => 'Informationen zur Fehleranalyse anzeigen',
+            'answer' => 'User Info: :userinfo'
         ],
         'unknown' => "Hmm. 🤔 Sorry, ich weiß leider nicht, was du vom mir willst. 😕
 \nMit dem Befehl /start kommst du zum Startmenü..."
+    ],
+    'exception' => [
+        'occurred' => "Ein Fehler ist aufgetreten:\n:exception"
     ]
 ];
