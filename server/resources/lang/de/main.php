@@ -17,7 +17,7 @@ return [
             'answer' => 'Gestoppt. Du gelangst zurück zum Startmenü mit /start'
         ],
         'deleteme' => [
-            'buttonText' => 'Meine Daten löschen',
+            'buttonText' => 'Benutzerkonto und Daten löschen',
             'success' => "Deine Daten wurden gelöscht.
 \nDu kannst jederzeit diesen Bot neu nutzen, indem du ihn mit dem Befehl /start neu startest."
         ],
