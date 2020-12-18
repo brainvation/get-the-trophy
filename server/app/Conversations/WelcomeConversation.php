@@ -47,8 +47,9 @@ class WelcomeConversation extends Conversation
             ->addButtons([
                 Button::create(__('main.commands.join.buttonText'))->value('/join'),
                 Button::create(__('main.commands.create.buttonText'))->value('/create'),
+                Button::create(__('main.commands.settings.buttonText'))->value('/settings')
             ]);
-        //No ask, as this is the main menu and we can process the answer any time
+        //No this->ask(), as this is the main menu and we can process the answer any time
         $this->say($question);
     }
 
