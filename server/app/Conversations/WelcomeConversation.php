@@ -19,10 +19,12 @@ class WelcomeConversation extends Conversation
             $this->welcomeNew();
             $this->getBot()->typesAndWaits(6);
             $this->askPrivacy();
-        } elseif (preg_match(
-            __('main.commands.settings.pattern'),
-            Str::lower($this->getBot()->getMessage()->getText())
-        )) {
+        } elseif (
+            preg_match(
+                __('main.commands.settings.pattern'),
+                Str::lower($this->getBot()->getMessage()->getText())
+            )
+        ) {
             //Change Settings?
             $this->askName();
         } else {
