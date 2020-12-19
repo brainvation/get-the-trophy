@@ -1,4 +1,5 @@
 <?php
+
 // phpcs:disable PSR1.Classes.ClassDeclaration -- will break Laravel Migration
 
 use Illuminate\Database\Migrations\Migration;
@@ -22,7 +23,7 @@ class CreateCompetitionsTable extends Migration
             $table->char('state', 1)
                 ->comment('State of competition: (I)nitial, (C)reated, (W)aiting, (A)ctive, (D)one');
             $table->string('linked_channel_service')
-                ->comment('Links Compettion to a channel / group of a certain service');
+                ->comment('Links Competition to a channel / group of a certain service');
             $table->string('linked_channel_id')
                 ->comment('ID of linked channel / group');
 

@@ -1,4 +1,5 @@
 <?php
+
 // phpcs:disable PSR1.Classes.ClassDeclaration -- will break Laravel Migration
 
 use Illuminate\Database\Migrations\Migration;
@@ -15,6 +16,7 @@ class CreateCompetitionGamesTable extends Migration
     public function up()
     {
         Schema::create('competition_games', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('competition_id')
                 ->constrained()
                 ->onUpdate('cascade')
@@ -25,10 +27,7 @@ class CreateCompetitionGamesTable extends Migration
                 ->comment('State of competition: (I)nitial, (C)reated, (W)aiting, (A)ctive, (D)one');
             $table->string('game')
                 ->comment('Identifier / name of played game');
-            $table->json('config')
-                ->comment('Configuration of game');
             $table->timestamps();
-            $table->primary(['competition_id', 'sequence_no'], 'competition_games');
         });
     }
 
