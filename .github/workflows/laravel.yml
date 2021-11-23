@@ -35,4 +35,4 @@ jobs:
       run: vendor/bin/phpunit
     - name: Codacy Coverage Report
       if: ${{ github.event_name == 'push' && github.repository == 'brainvation/get-the-trophy' && success() }}
-      uses: ./.github/actions/codacy-coverage
+      uses: ./.github/actions/codacy-coverage.yml
