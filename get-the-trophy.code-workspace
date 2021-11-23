@@ -13,7 +13,9 @@
 			"Authenticatable",
 			"botman",
 			"debuginfo",
-			"deleteme"
+			"deleteme",
+			"mkdir",
+			"shivammathur"
 		],
 		"editor.insertSpaces": false,
 		"files.insertFinalNewline": true,
