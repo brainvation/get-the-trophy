@@ -33,7 +33,8 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
-      
-  call-codacy:
+    - name: Run codacy-coverage-reporter
       if: ${{ github.event_name == 'push' && github.repository == 'brainvation/get-the-trophy' && success() }}
-      uses: brainvation/get-the-trophy/.github/workflows/codacy-coverage.yml@b65714465dd67ce6119ec528959a63ffa4b714cc
+      uses: codacy/codacy-coverage-reporter-action@v1.1.0
+      with:
+        project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
