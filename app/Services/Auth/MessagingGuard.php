@@ -36,7 +36,7 @@ class MessagingGuard implements Guard
      */
     public function check()
     {
-        return !($this->user() === null);
+        return ($this->user() != null);
     }
 
     /**
@@ -56,23 +56,20 @@ class MessagingGuard implements Guard
      */
     public function user()
     {
-        if ($this->user === null) {
-            //If we already have a user, return that
+        //If we already have a user, return that
+        if ($this->user != null) {
             return $this->user;
-        } else {
-            //Otherwise try to do that based on the data from the messaging services
-            if ($credentials = $this->getExternalUserData()) {
-                //Got some data! Let's see if that is a valid user...
-                if ($this->validate($credentials)) {
-                    //Yeah! Authenticated!
-                    return $this->user;
-                } else {
-                    return null;
-                }
-            } else {
-                return null;
-            }
         }
+
+        //Otherwise try to do that based on the data from the messaging services
+        //and see if it is a valid user
+        if ($this->validate($this->getExternalUserData())) {
+            //Yeah! Authenticated!
+            return $this->user;
+        }
+
+        //in all other cases return null
+        return null;
     }
 
     /**
@@ -96,11 +93,13 @@ class MessagingGuard implements Guard
         $user = $this->provider->retrieveByCredentials($credentials);
 
         if ($user != null && $this->provider->validateCredentials($user, $credentials)) {
+            //User good -> set it and return
             $this->setUser($user);
             return true;
-        } else {
-            return false;
         }
+
+        //in all other cases
+        return false;
     }
 
     /**
@@ -115,17 +114,22 @@ class MessagingGuard implements Guard
         return $this;
     }
 
+    /**
+     * Retrieve the external user data of the current connection
+     * 
+     * @return array External User Data containing Service and ID
+     */
     public function getExternalUserData()
     {
         $botman = app('BotMan\BotMan\BotMan');
         $botUser = $botman->getUser();
-        if ($botUser == null) {
+        if ($botUser != null) {
             return [
                 'external_service' => $botman->getDriver()->getName(),
                 'external_id' => $botUser->getId()
             ];
-        } else {
-            return null;
         }
+
+        return null;
     }
 }
