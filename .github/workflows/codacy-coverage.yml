@@ -1,6 +1,10 @@
 name: codacy-coverage-reporter
 
-on: workflow_dispatch
+on:
+  workflow_call:
+    secrets:
+      token:
+        required: false
 
 jobs:
   codacy-coverage-reporter:
