@@ -19,6 +19,7 @@
 		],
 		"editor.insertSpaces": false,
 		"files.insertFinalNewline": true,
-		"files.trimFinalNewlines": true
+		"files.trimFinalNewlines": true,
+		"intelephense.phpdoc.useFullyQualifiedNames": true
 	},
 }
