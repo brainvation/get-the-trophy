@@ -1,8 +1,6 @@
 name: codacy-coverage-reporter
 
-on:
-  repository_dispatch:
-    types: [trigger-codacy-coverage]
+on: workflow_dispatch
 
 jobs:
   codacy-coverage-reporter:
