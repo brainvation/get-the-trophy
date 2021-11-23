@@ -62,17 +62,14 @@ class MessagingGuard implements Guard
         }
 
         //Otherwise try to do that based on the data from the messaging services
-        if ($credentials = $this->getExternalUserData()) {
-            //Got some data! Let's see if that is a valid user...
-            if ($this->validate($credentials)) {
-                //Yeah! Authenticated!
-                return $this->user;
-            } else {
-                return null;
-            }
-        } else {
-            return null;
+        //and see if it is a valid user
+        if ($this->validate($this->getExternalUserData())) {
+            //Yeah! Authenticated!
+            return $this->user;
         }
+
+        //in all other cases return null
+        return null;
     }
 
     /**
