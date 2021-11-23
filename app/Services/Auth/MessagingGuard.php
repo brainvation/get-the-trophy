@@ -36,7 +36,7 @@ class MessagingGuard implements Guard
      */
     public function check()
     {
-        return !($this->user() === null);
+        return ($this->user() != null);
     }
 
     /**
@@ -57,7 +57,7 @@ class MessagingGuard implements Guard
     public function user()
     {
         //If we already have a user, return that
-        if ($this->user !== null) {
+        if ($this->user != null) {
             return $this->user;
         }
 
@@ -118,13 +118,13 @@ class MessagingGuard implements Guard
     {
         $botman = app('BotMan\BotMan\BotMan');
         $botUser = $botman->getUser();
-        if ($botUser == null) {
+        if ($botUser != null) {
             return [
                 'external_service' => $botman->getDriver()->getName(),
                 'external_id' => $botUser->getId()
             ];
-        } else {
-            return null;
         }
+
+        return null;
     }
 }
