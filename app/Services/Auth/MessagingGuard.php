@@ -93,11 +93,13 @@ class MessagingGuard implements Guard
         $user = $this->provider->retrieveByCredentials($credentials);
 
         if ($user != null && $this->provider->validateCredentials($user, $credentials)) {
+            //User good -> set it and return
             $this->setUser($user);
             return true;
-        } else {
-            return false;
         }
+
+        //in all other cases
+        return false;
     }
 
     /**
