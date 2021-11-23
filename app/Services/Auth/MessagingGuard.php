@@ -36,7 +36,7 @@ class MessagingGuard implements Guard
      */
     public function check()
     {
-        return !is_null($this->user());
+        return !($this->user() === null);
     }
 
     /**
@@ -56,7 +56,7 @@ class MessagingGuard implements Guard
      */
     public function user()
     {
-        if (!is_null($this->user)) {
+        if ($this->user === null) {
             //If we already have a user, return that
             return $this->user;
         } else {
@@ -82,9 +82,7 @@ class MessagingGuard implements Guard
      */
     public function id()
     {
-        if ($user = $this->user()) {
-            return $this->user()->getAuthIdentifier();
-        }
+        return $this->user()->getAuthIdentifier();
     }
 
     /**
@@ -97,7 +95,7 @@ class MessagingGuard implements Guard
     {
         $user = $this->provider->retrieveByCredentials($credentials);
 
-        if (!is_null($user) && $this->provider->validateCredentials($user, $credentials)) {
+        if ($user != null && $this->provider->validateCredentials($user, $credentials)) {
             $this->setUser($user);
             return true;
         } else {
@@ -121,7 +119,7 @@ class MessagingGuard implements Guard
     {
         $botman = app('BotMan\BotMan\BotMan');
         $botUser = $botman->getUser();
-        if (!is_null($botUser)) {
+        if ($botUser == null) {
             return [
                 'external_service' => $botman->getDriver()->getName(),
                 'external_id' => $botUser->getId()

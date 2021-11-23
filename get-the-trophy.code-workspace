@@ -5,14 +5,18 @@
 		}
 	],
 	"settings": {
-		"phpcs.standard": "PSR12",
 		"files.eol": "\n",
 		"intelephense.diagnostics.run": "onSave",
 		"editor.formatOnSave": true,
 		"cSpell.language": "de,en",
 		"cSpell.words": [
+			"Authenticatable",
+			"botman",
 			"debuginfo",
 			"deleteme"
-		]
+		],
+		"editor.insertSpaces": false,
+		"files.insertFinalNewline": true,
+		"files.trimFinalNewlines": true
 	},
 }
