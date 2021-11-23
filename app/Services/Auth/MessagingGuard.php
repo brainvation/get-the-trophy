@@ -114,6 +114,11 @@ class MessagingGuard implements Guard
         return $this;
     }
 
+    /**
+     * Retrieve the external user data of the current connection
+     * 
+     * @return array External User Data containing Service and ID
+     */
     public function getExternalUserData()
     {
         $botman = app('BotMan\BotMan\BotMan');
