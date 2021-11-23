@@ -116,7 +116,7 @@ class MessagingGuard implements Guard
 
     /**
      * Retrieve the external user data of the current connection
-     * 
+     *
      * @return array External User Data containing Service and ID
      */
     public function getExternalUserData()
