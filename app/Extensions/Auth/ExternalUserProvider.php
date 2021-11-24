@@ -27,19 +27,17 @@ class ExternalUserProvider extends EloquentUserProvider
     public function validateCredentials(Authenticatable $user, array $credentials)
     {
         //In case a pwd is provided, we use that
-        foreach ($credentials as $key => $value) {
-            if (Str::contains($key, 'password')) {
-                return $this->hasher->check($credentials['password'], $user->getAuthPassword());
-            }
+        if (array_key_exists('password', $credentials) === true) {
+            return $this->hasher->check($credentials['password'], $user->getAuthPassword());
         }
 
-        //Otherwise we check the secret in the request key
-        /* TODO $driverName = app('BotMan\BotMan\BotMan')->getDriver()->getName();
+        // TODO Otherwise we check the secret in the request key
+        /*  $driverName = app('BotMan\BotMan\BotMan')->getDriver()->getName();
         if (config('gtt.auth.secrets')->{$driverName} == request()->secret_key) {
             return true;
         } else {
             return false;
         }*/
-        return true;
+        return false;
     }
 }
