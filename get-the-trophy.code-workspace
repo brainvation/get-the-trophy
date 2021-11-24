@@ -15,8 +15,13 @@
 			"debuginfo",
 			"deleteme",
 			"hasher",
+			"Laravel",
 			"mkdir",
-			"shivammathur"
+			"phpcs",
+			"shivammathur",
+			"Codacy",
+			"phpdoc",
+			"intelephense"
 		],
 		"editor.insertSpaces": false,
 		"files.insertFinalNewline": true,
