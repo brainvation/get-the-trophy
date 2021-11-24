@@ -38,6 +38,6 @@ class CreateCompetitionUsers extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('competition_players');
+        Schema::dropIfExists('competition_users');
     }
 }
