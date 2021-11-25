@@ -31,18 +31,18 @@ jobs:
       run: |
         mkdir -p database
         touch database/database.sqlite
-    - name: Create database tables
+    - name: Create and seed database tables
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-      run: php artisan migrate    
+      run: php artisan migrate --seed  
     - name: Execute tests (Unit and Feature tests) via Laravel internal test management and PHPUnit
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: php artisan test --parallel
     - name: Run Codacy Coverage Reporter
-      if: ${{ github.event_name == 'push' && github.repository == 'brainvation/get-the-trophy' && success() }}
+      if: ${{ github.repository == 'brainvation/get-the-trophy' && success() }}
       uses: codacy/codacy-coverage-reporter-action@v1.1.0
       with:
         project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}

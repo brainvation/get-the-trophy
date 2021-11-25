@@ -12,16 +12,18 @@
 		"cSpell.words": [
 			"Authenticatable",
 			"botman",
+			"brainvation",
+			"Codacy",
 			"debuginfo",
 			"deleteme",
 			"hasher",
+			"intelephense",
 			"Laravel",
 			"mkdir",
 			"phpcs",
-			"shivammathur",
-			"Codacy",
 			"phpdoc",
-			"intelephense"
+			"shivammathur",
+			"xdebug"
 		],
 		"editor.insertSpaces": false,
 		"files.insertFinalNewline": true,
