@@ -136,4 +136,15 @@ class MessagingGuard implements Guard
 
         return null;
     }
+
+    /**
+     * Login a specific user in
+     *
+     * @param User $user
+     * @return boolean true
+     */
+    public function login(Authenticatable $user, bool $remember = false)
+    {
+        $this->$user = $user;
+    }
 }
