@@ -14,3 +14,5 @@ npm-debug.log
 yarn-error.log
 composer.phar
 clover.xml
+composer.lock
+package-lock.json
