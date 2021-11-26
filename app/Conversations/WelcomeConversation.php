@@ -14,23 +14,28 @@ class WelcomeConversation extends Conversation
 {
     public function run()
     {
+        //Initial Setup for new users
         if (Auth::guest()) {
-            //Initial Setup for new users
             $this->welcomeNew();
             $this->getBot()->typesAndWaits(6);
             $this->askPrivacy();
-        } elseif (
+            return;
+        }
+
+        //Change Settings?
+        if (
             preg_match(
                 __('main.commands.settings.pattern'),
                 Str::lower($this->getBot()->getMessage()->getText())
             )
         ) {
-            //Change Settings?
             $this->askName();
-        } else {
-            //In any other case, just show menu
-            $this->showMenu();
+            return;
         }
+
+        //In any other case, just show menu
+        $this->showMenu();
+        return;
     }
 
     public function welcomeNew()
@@ -49,7 +54,7 @@ class WelcomeConversation extends Conversation
             ->addButtons([
                 Button::create(__('main.commands.join.buttonText'))->value('/join'),
                 Button::create(__('main.commands.create.buttonText'))->value('/create'),
-                Button::create(__('main.commands.settings.buttonText'))->value('/settings')
+                Button::create(__('main.commands.settings.buttonText'))->value('/settings'),
             ]);
         //No this->ask(), as this is the main menu and we can process the answer any time
         $this->say($question);
@@ -62,7 +67,7 @@ class WelcomeConversation extends Conversation
         $question = Question::create($questionText)
             ->addButtons([
                 Button::create(__("conversations/welcome.privacy.yes"))->value('yes'),
-                Button::create(__("conversations/welcome.privacy.no"))->value('no')
+                Button::create(__("conversations/welcome.privacy.no"))->value('no'),
             ]);
 
         $this->ask($question, [
@@ -70,31 +75,31 @@ class WelcomeConversation extends Conversation
                 'pattern' => __("conversations/welcome.privacy.yes_pattern"),
                 'callback' => function () {
                     //Great! Let's create user
-                    $internalUser = User::create([
+                    User::create([
                         'external_service'  => $this->getBot()->getDriver()->getName(),
                         'external_id'       => $this->getBot()->getUser()->getId(),
-                        'privacy_consent'   => true
+                        'privacy_consent'   => true,
                     ]);
 
                     //And reply
                     $this->say(__("conversations/welcome.privacy.agreed"));
                     $this->getBot()->typesAndWaits(2);
                     $this->askName();
-                }
+                },
             ],
             [
                 'pattern' => __("conversations/welcome.privacy.no_pattern"),
                 'callback' => function () {
                     $this->say(__("conversations/welcome.privacy.declined"));
-                }
+                },
             ],
             [
                 'pattern' => '.*',
                 'callback' => function () {
                     $this->say(__('conversations/welcome.privacy.answer_unclear'));
                     $this->repeat();
-                }
-            ]
+                },
+            ],
         ]);
     }
 

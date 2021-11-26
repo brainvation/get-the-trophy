@@ -9,10 +9,10 @@ return [
 \n*Hol den Pokal!* ist ein interaktives Spiel mit deinen Freunden, dass du komplett online oder auch in Teilen im Real Life spielen kannst. 
 \nIhr spielt gemeinsam in mehreren Spielen gegeneinander, und der beste Spieler holt sich am Ende den Pokal. 🏆
 \nIch hoffe du freust dich genauso sehr auf die nächste Partie wie ich! 🤩",
-        'known' => "Willkommen, :name!  👋"
+        'known' => "Willkommen, :name!  👋",
     ],
     'menu' => [
-        'selection_prompt' => 'Was möchtest du tun?'
+        'selection_prompt' => 'Was möchtest du tun?',
     ],
     'privacy' => [
         'prompt' => "Im Rahmen dieses Bots verarbeiten und speichern wir Daten von dir.
@@ -28,12 +28,12 @@ return [
         'agreed' => 'Großartig! 👍 Dann können wir fortfahren.',
         'declined' => "Schade, dann kannst du diesen Dienst leider nicht nutzen. 😞
 \nUm neu zu starten schreibe /start",
-        'answer_unclear' => 'Das hab ich leider nicht verstanden. Antworte bitte mit Ja oder Nein.'
+        'answer_unclear' => 'Das hab ich leider nicht verstanden. Antworte bitte mit Ja oder Nein.',
     ],
     'name' => [
         'prompt' => "Wie darf ich dich nennen?
 \nDiesen Namen verwende ich auch für Spielstände, Menüs und die Kommunikation mit Mitspielern.",
         'buttons_available' => "\nMir wurden da schon ein paar Tipps gegeben. Wähle gerne einfach hier aus oder gib deine eigene Antwort ein.",
 
-    ]
+    ],
 ];

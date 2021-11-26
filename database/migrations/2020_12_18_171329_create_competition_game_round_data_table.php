@@ -26,7 +26,7 @@ class CreateCompetitionGameRoundDataTable extends Migration
                 ->comment('Value of data/setting');
             $table->primary([
                 'competition_game_round_id',
-                'key'
+                'key',
             ], 'competition_game_data');
         });
     }

@@ -79,7 +79,7 @@ return [
         'external_users' => [
             'driver' => 'external',
             'model' =>  GetTheTrophy\Models\User::class,
-        ]
+        ],
 
         // 'users' => [
         //     'driver' => 'database',
