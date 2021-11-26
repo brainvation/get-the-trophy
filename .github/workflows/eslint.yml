@@ -3,14 +3,14 @@ name: Format JS (ESLint Fix)
 on:
   push:
     branches:
-      - "master"
-      paths:
-        - '**.ts'
-        - '**.js'
+      - master
+    paths:
+      - '**.ts'
+      - '**.js'
   pull_request:
     paths:
-        - '**.ts'
-        - '**.js'
+      - '**.ts'
+      - '**.js'
 
 jobs:
   eslint:
