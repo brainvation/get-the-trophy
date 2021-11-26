@@ -1,0 +1,31 @@
+name: Format code (prettier)
+
+on:
+  push:
+    branches:
+      - "master"
+  pull_request:
+    paths:
+      - "**.css"
+      - "**.js"
+      - "**.vue"
+
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Install
+        run: npm install prettier
+        env:
+          CI: true
+
+      - name: Run prettier
+        run: npm prettier --write .
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Apply prettier changes

@@ -10,7 +10,6 @@ use Illuminate\Support\Str;
 
 class ExternalUserProvider extends EloquentUserProvider
 {
-
     /**
      ** Create a new external user provider, based on Eloquent.
      *
