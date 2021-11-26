@@ -74,7 +74,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => GetTheTrophy\Models\User::class,
         ],
         'external_users' => [
             'driver' => 'external',

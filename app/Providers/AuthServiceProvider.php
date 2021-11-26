@@ -29,11 +29,11 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         // add custom user provider
-        Auth::provider('external', 
-            fn ($app, array $config) => new ExternalUserProvider($this->app['hash'], User::class));
+        Auth::provider('external', fn ($app, array $config) =>
+            new ExternalUserProvider($this->app['hash'], User::class));
 
         // add custom guard
-        Auth::extend('messaging', 
-            fn ($app, $name, array $config) => new MessagingGuard(Auth::createUserProvider($config['provider']), $app->make('request')));
+        Auth::extend('messaging', fn ($app, $name, array $config) =>
+            new MessagingGuard(Auth::createUserProvider($config['provider']), $app->make('request')));
     }
 }
