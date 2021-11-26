@@ -113,8 +113,6 @@ class MessagingGuard implements Guard
     public function setUser(Authenticatable $user)
     {
         $this->user = $user;
-
-        return $this;
     }
 
     /**
@@ -135,16 +133,5 @@ class MessagingGuard implements Guard
         }
 
         return null;
-    }
-
-    /**
-     * Login a specific user in
-     *
-     * @param User $user
-     * @return boolean true
-     */
-    public function login(Authenticatable $user, bool $remember = false)
-    {
-        $this->$user = $user;
     }
 }

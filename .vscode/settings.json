@@ -6,6 +6,7 @@
         "codacy",
         "debuginfo",
         "deleteme",
+        "hasher",
         "laravel",
         "phpcs",
         "shivammathur",

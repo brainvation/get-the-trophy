@@ -78,14 +78,14 @@ class WelcomeConversation extends Conversation
                 'pattern' => __("conversations/welcome.privacy.yes_pattern"),
                 'callback' => function () {
                     //Great! Let's create user and save to DB
-                    $newUser = new User();
-                    $newUser->external_service  = $this->getBot()->getDriver()->getName();
-                    $newUser->external_id       = $this->getBot()->getUser()->getId();
-                    $newUser->privacy_consent   = true;
-                    $newUser->save();
+                    $internalUser = new User();
+                    $internalUser->external_service  = $this->getBot()->getDriver()->getName();
+                    $internalUser->external_id       = $this->getBot()->getUser()->getId();
+                    $internalUser->privacy_consent   = true;
+                    $internalUser->save();
 
                     //Log that user in
-                    Auth::login($newUser);
+                    Auth::setUser($internalUser);
 
                     //And reply
                     $this->say(__("conversations/welcome.privacy.agreed"));
