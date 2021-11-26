@@ -150,7 +150,7 @@ class WelcomeConversation extends Conversation
             ->addButtons($nameButtons);
 
         $this->ask($question, function (Answer $answer) {
-            $internalUser = Auth::user();
+            $internalUser = User::find(Auth::id());
 
             //Set Name
             $internalUser->name = $answer->getText();
