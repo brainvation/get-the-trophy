@@ -5,7 +5,6 @@ namespace GetTheTrophy\Services\Auth;
 use GetTheTrophy\Models\User;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Http\Request;
 
@@ -126,7 +125,7 @@ class MessagingGuard implements Guard
         if ($botUser != null) {
             return [
                 'external_service' => $botman->getDriver()->getName(),
-                'external_id' => $botUser->getId()
+                'external_id' => $botUser->getId(),
             ];
         }
 

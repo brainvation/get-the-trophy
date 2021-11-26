@@ -6,7 +6,6 @@ use BotMan\BotMan\BotMan;
 use Illuminate\Auth\EloquentUserProvider;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Hashing\Hasher;
-use Illuminate\Support\Str;
 
 class ExternalUserProvider extends EloquentUserProvider
 {

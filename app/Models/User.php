@@ -2,7 +2,6 @@
 
 namespace GetTheTrophy\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -21,6 +20,6 @@ class User extends Authenticatable
         'name',
         'external_service',
         'external_id',
-        'privacy_consent'
+        'privacy_consent',
     ];
 }
