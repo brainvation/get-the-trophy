@@ -19,8 +19,7 @@ jobs:
 
       - name: NPM Install
         run: |
-          npm install --no-save eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin 
-          npm install --no-save eslint eslint-config-google 
+          npm install --no-save eslint eslint-config-google typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin  
 
 
       - name: Run ESLint and Fix what can be fixed
