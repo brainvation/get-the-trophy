@@ -82,6 +82,7 @@ class WelcomeConversation extends Conversation
                     $newUser->external_service  = $this->getBot()->getDriver()->getName();
                     $newUser->external_id       = $this->getBot()->getUser()->getId();
                     $newUser->privacy_consent   = true;
+                    $newUser->save();
 
                     //Log that user in
                     Auth::login($newUser);
