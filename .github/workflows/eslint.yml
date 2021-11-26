@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - "master"
-    paths:
-    - '**.ts'
-    - '**.js'
   pull_request:
     paths:
         - '**.ts'
