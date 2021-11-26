@@ -39,8 +39,8 @@ return $config->setRules([
                 'throw', 
                 'try', 
                 'while']],
-        'combine_consecutive_issets',
-        'combine_consecutive_unsets',
+        'combine_consecutive_issets' => true,
+        'combine_consecutive_unsets' => true,
     ])
     ->setFinder($finder)
 ;
