@@ -1,5 +1,7 @@
 <?php
 
+// phpcs:disable PSR1.Classes.ClassDeclaration -- Namespace would break Laravel Migration
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
