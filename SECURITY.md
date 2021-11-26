@@ -2,10 +2,10 @@
 
 ## Supported Versions
 
-Only the newest available version is supported
+Only the newest available version, provided through our official bots, is supported.
 
 ## Reporting a Vulnerability
 
 To report a vulnerability send us an e-mail at contact@brainvation.de and we'll get back to you as soon as possible.
 
-As this is "hobby project" please understand I might need some time to repsond. Allow me up to 14 days to do so.
+Allow us up to 14 days for the initial reply
