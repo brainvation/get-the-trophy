@@ -17,7 +17,7 @@ class WelcomeConversation extends Conversation
         //Initial Setup for new users
         if (Auth::guest()) {
             $this->welcomeNew();
-            $this->getBot()->typesAndWaits(6);
+            $this->getBot()->typesAndWaits(8);
             $this->askPrivacy();
 
             return;
@@ -77,16 +77,17 @@ class WelcomeConversation extends Conversation
             [
                 'pattern' => __("conversations/welcome.privacy.yes_pattern"),
                 'callback' => function () {
-                    //Great! Let's create user
-                    User::create([
-                        'external_service'  => $this->getBot()->getDriver()->getName(),
-                        'external_id'       => $this->getBot()->getUser()->getId(),
-                        'privacy_consent'   => true,
-                    ]);
+                    //Great! Let's create user and save to DB
+                    $newUser = new User();
+                    $newUser->external_service  = $this->getBot()->getDriver()->getName();
+                    $newUser->external_id       = $this->getBot()->getUser()->getId();
+                    $newUser->privacy_consent   = true;
+
+                    //Log that user in
+                    Auth::login($newUser);
 
                     //And reply
                     $this->say(__("conversations/welcome.privacy.agreed"));
-                    $this->getBot()->typesAndWaits(2);
                     $this->askName();
                 },
             ],
@@ -149,7 +150,7 @@ class WelcomeConversation extends Conversation
             ->addButtons($nameButtons);
 
         $this->ask($question, function (Answer $answer) {
-            $internalUser = User::find(Auth::id());
+            $internalUser = Auth::user();
 
             //Set Name
             $internalUser->name = $answer->getText();
