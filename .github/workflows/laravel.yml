@@ -43,7 +43,7 @@ jobs:
           DB_DATABASE: database/database.sqlite
         run: php artisan test --parallel
       - name: Run Codacy Coverage Reporter
-        if: ${{ github.repository == 'brainvation/get-the-trophy' && success() }}
+        if: ${{ github.event_name == 'push' && github.repository == 'brainvation/get-the-trophy' && success() }}
         uses: codacy/codacy-coverage-reporter-action@v1.1.0
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
