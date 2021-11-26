@@ -15,9 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //register botman - workaround for https://github.com/botman/botman/issues/1223
-        $this->app->singleton(\BotMan\BotMan\BotMan::class, function ($app) {
-            return $app->make('botman');
-        });
+        $this->app->singleton(\BotMan\BotMan\BotMan::class, fn ($app) => $app->make('botman'));
     }
 
     /**
