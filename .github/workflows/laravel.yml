@@ -2,13 +2,12 @@ name: Laravel & PHPUnit tests
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   laravel-tests:
-
     runs-on: ubuntu-latest
 
     steps:
