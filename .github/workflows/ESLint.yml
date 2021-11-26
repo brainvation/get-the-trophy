@@ -24,7 +24,7 @@ jobs:
 
       - name: Run ESLint and Fix what can be fixed
         run: 
-          npx eslint .
+          npx eslint . || exit 0
           
 
       - name: Determine Changes and commit
