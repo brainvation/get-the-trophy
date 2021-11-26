@@ -9,7 +9,7 @@ on:
       - "**.php"
 
 jobs:
-  prettier:
+  eslint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -24,7 +24,7 @@ jobs:
 
       - name: Run ESLint and Fix what can be fixed
         run: 
-          npx eslint --env-info --fix --quiet .
+          npx eslint --env-info .
           
 
       - name: Determine Changes and commit
