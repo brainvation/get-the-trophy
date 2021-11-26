@@ -15,7 +15,7 @@ return $config->setRules([
         'array_syntax' => ['syntax' => 'short'],
         'no_unused_imports' => true,
         'ordered_imports' => ['imports_order' => ['class', 'function', 'const'], 'sort_algorithm' => 'alpha'],
-        'align_multiline_comment',
+        'align_multiline_comment' => true,
         'blank_line_before_statement' 
             => ['statements' 
                 => [
