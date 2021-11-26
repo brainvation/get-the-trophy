@@ -4,18 +4,16 @@
 /storage/*.keys
 /storage/*.key
 /vendor
+/tmp
+.env
+.env.backup
 *.cache
 docker-compose.override.yml
 Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
-composer.phar
-clover.xml
-/.vscode
-package-lock.json
-package.json
 composer.json
 composer.lock
-#no php - we have php-cs-fixer for that
-*.php
+docker-compose.yml
+artisan
+package-lock.json
+package.json
+/public/js/app.js
