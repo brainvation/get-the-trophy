@@ -13,7 +13,7 @@ $config = new PhpCsFixer\Config();
 return $config->setRules([
         '@PSR12' => true,
         'array_syntax' => ['syntax' => 'short'],
-        'no_unused_imports',
+        'no_unused_imports' => true,
         'ordered_imports' => ['imports_order' => ['class', 'function', 'const'], 'sort_algorithm' => 'alpha'],
         'align_multiline_comment',
         'blank_line_before_statement' 
