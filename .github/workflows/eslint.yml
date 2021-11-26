@@ -1,9 +1,12 @@
-name: Fix JS errors (ESLint Fix)
+name: Format JS (ESLint Fix)
 
 on:
   push:
     branches:
       - "master"
+      paths:
+        - '**.ts'
+        - '**.js'
   pull_request:
     paths:
         - '**.ts'
@@ -23,7 +26,7 @@ jobs:
           npm install --no-save eslint eslint-config-google typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin  
 
 
-      - name: Run ESLint and Fix what can be fixed
+      - name: Run ESLint and fix what can be fixed
         run: 
           npx eslint --fix . || exit 0
           
@@ -31,6 +34,6 @@ jobs:
       - name: Determine Changes and commit
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Apply prettier changes
+          commit_message: Apply eslint fixes
           commit_user_name: brainvation Bot
           commit_user_email: "apps@brainvation.de"

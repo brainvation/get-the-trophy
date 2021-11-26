@@ -3,12 +3,12 @@ name: Format PHP (PHP CS Fixer)
 on:
   push:
     branches:
-      - "master"
+      - master
     paths:
-      - "**.php"
+      - '**.php'
   pull_request:
     paths:
-      - "**.php"
+      - '**.php'
 
 jobs:
   php-cs-fixer:
@@ -31,4 +31,3 @@ jobs:
           commit_message: Apply php-cs-fixer changes
           commit_user_name: brainvation Bot
           commit_user_email: "apps@brainvation.de"
-          file_pattern: "*.php"
