@@ -12,7 +12,8 @@ jobs:
   prettier:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code 
+        uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
 
@@ -22,7 +23,8 @@ jobs:
       - name: Run prettier
         run: npx prettier --write .
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Determine Changes and commit
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Apply prettier changes
           commit_user_name: brainvation Bot
