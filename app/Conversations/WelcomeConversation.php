@@ -19,6 +19,7 @@ class WelcomeConversation extends Conversation
             $this->welcomeNew();
             $this->getBot()->typesAndWaits(6);
             $this->askPrivacy();
+
             return;
         }
 
@@ -30,11 +31,13 @@ class WelcomeConversation extends Conversation
             )
         ) {
             $this->askName();
+
             return;
         }
 
         //In any other case, just show menu
         $this->showMenu();
+
         return;
     }
 
@@ -110,20 +113,24 @@ class WelcomeConversation extends Conversation
 
         //Add the info we have as buttons
         $nameButtons = [];
+
         if (!empty($externalUser)) {
             if (!(empty($externalUser->getFirstName()))) {
                 $nameButtons[] = Button::create($externalUser->getFirstName())
                     ->value($externalUser->getFirstName());
             }
+
             if (!(empty($externalUser->getLastName()))) {
                 $nameButtons[] = Button::create($externalUser->getLastName())
                     ->value($externalUser->getLastName());
             }
+
             if (!(empty($externalUser->getFirstName())) && !(empty($externalUser->getLastName()))) {
                 $fullName = $externalUser->getFirstName() . ' ' . $externalUser->getLastName();
                 $nameButtons[] = Button::create($fullName)
                     ->value($fullName);
             }
+
             if (!(empty($externalUser->getUsername()))) {
                 $nameButtons[] = Button::create($externalUser->getUsername())
                     ->value($externalUser->getUsername());

@@ -96,6 +96,7 @@ class MessagingGuard implements Guard
         if (isset($user) && $this->provider->validateCredentials($user, $credentials)) {
             //User good -> set it and return
             $this->setUser($user);
+
             return true;
         }
 
@@ -112,6 +113,7 @@ class MessagingGuard implements Guard
     public function setUser(Authenticatable $user)
     {
         $this->user = $user;
+
         return $this;
     }
 
@@ -124,6 +126,7 @@ class MessagingGuard implements Guard
     {
         $botman = app('BotMan\BotMan\BotMan');
         $botUser = $botman->getUser();
+
         if (isset($botUser)) {
             return [
                 'external_service' => $botman->getDriver()->getName(),

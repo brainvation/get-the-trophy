@@ -2,8 +2,8 @@
 
 namespace GetTheTrophy\Http\Middleware;
 
-use GetTheTrophy\Providers\RouteServiceProvider;
 use Closure;
+use GetTheTrophy\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 

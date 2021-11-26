@@ -47,6 +47,7 @@ class BotController extends BaseController
     protected function processCommands(BotMan $bot, string $message)
     {
         $messageLower = Str::lower($message);
+
         if ($messageLower == "/deleteme") {
             User::destroy(Auth::id());
             $bot->reply(__('main.commands.deleteme.success'));
