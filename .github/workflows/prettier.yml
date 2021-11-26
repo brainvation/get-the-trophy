@@ -17,7 +17,7 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: NPM Install
-        run: npm install prettier
+        run: npm install prettier --no-save
 
       - name: Run prettier
         run: npx prettier --write .
