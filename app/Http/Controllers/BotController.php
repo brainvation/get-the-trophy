@@ -35,10 +35,14 @@ class BotController extends BaseController
             if (Auth::check()) {
                 //If the user has a session, process the commands
                 $this->processCommands($bot, $message);
-            } else {
-                //If not -> go to Welcome Conversation
-                $bot->startConversation(new WelcomeConversation());
+
+                return;
             }
+
+            //If all other cases -> go to Welcome Conversation
+            $bot->startConversation(new WelcomeConversation());
+
+            return;
         });
 
         $botman->listen();
@@ -54,8 +58,8 @@ class BotController extends BaseController
         } elseif ($messageLower == '/stop') {
             $bot->reply(__('main.commands.stop.answer'));
         } elseif ($messageLower == "/debuginfo") {
-            $debuginfo = print_r($bot->getUser(), true);
-            $bot->reply($debuginfo);
+            $debugInfo = print_r($bot->getUser(), true);
+            $bot->reply($debugInfo);
         } elseif (
             preg_match(__('main.commands.start.pattern'), $messageLower)
             || preg_match(__('main.commands.settings.pattern'), $messageLower)

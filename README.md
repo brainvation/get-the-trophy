@@ -7,14 +7,18 @@
 ## About Get-The-Trophy
 
 **Get the Trophy!** is an interactive game you can play with your friends.
-You play in several games against each other, and the best player wins the trophy at the end. 🏆
+You play in several games against each other, and the best player wins the
+trophy at the end. 🏆
 
-This instant messaging bot helps you get through the game - weather you play it completely online or parts in real life.
+This instant messaging bot helps you get through the game - weather you play it
+completely online or parts in real life.
 
 ## Platforms
 
 The productive version of the bot is available on:
+
 - Telegram as [GetTheTrophyBot](https://t.me/GetTheTrophyBot)
+
 ## Current Limitations
 
 - not done yet (early alpha state)
