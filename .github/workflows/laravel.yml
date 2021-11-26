@@ -20,8 +20,10 @@ jobs:
           coverage: xdebug
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-      - name: Install Dependencies
+      - name: Install Dependencies (PHP)
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      - name: Install Dependencies (NPM)
+        run: npm ci
       - name: Generate key
         run: php artisan key:generate
       - name: Directory Permissions
