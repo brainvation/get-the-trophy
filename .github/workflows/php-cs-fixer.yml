@@ -26,5 +26,5 @@ jobs:
         with:
           commit_message: Apply php-cs-fixer changes
           commit_user_name: brainvation Bot
-          commit_user_email: apps@brainvation.de
-          file_pattern: *.php
+          commit_user_email: "apps@brainvation.de"
+          file_pattern: "*.php"
