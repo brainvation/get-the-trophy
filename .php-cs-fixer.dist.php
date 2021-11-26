@@ -10,34 +10,34 @@ $finder = PhpCsFixer\Finder::create()
     ->in(__DIR__);
 
 $config = new PhpCsFixer\Config();
+
 return $config->setRules([
         '@PSR12' => true,
         'array_syntax' => ['syntax' => 'short'],
         'no_unused_imports' => true,
         'ordered_imports' => ['imports_order' => ['class', 'function', 'const'], 'sort_algorithm' => 'alpha'],
         'align_multiline_comment' => true,
-        'blank_line_before_statement' 
-            => ['statements' 
+        'blank_line_before_statement'
+            => ['statements'
                 => [
-                'break', 
-                'case', 
-                'continue', 
-                'declare', 
-                'default', 
-                'do', 
-                'exit', 
-                'for', 
-                'foreach', 
-                'goto', 
-                'if', 
-                'include', 
-                'include_once', 
-                'require', 
-                'require_once', 
-                'return', 
-                'switch', 
-                'throw', 
-                'try', 
+                'break',
+                'case',
+                'continue',
+                'declare',
+                'default',
+                'do',
+                'exit',
+                'for',
+                'foreach',
+                'goto',
+                'if',
+                'include',
+                'include_once',
+                'require',
+                'require_once',
+                'switch',
+                'throw',
+                'try',
                 'while']],
         'combine_consecutive_issets' => true,
         'combine_consecutive_unsets' => true,

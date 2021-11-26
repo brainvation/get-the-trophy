@@ -35,13 +35,11 @@ class BotController extends BaseController
             if (Auth::check()) {
                 //If the user has a session, process the commands
                 $this->processCommands($bot, $message);
-
                 return;
             }
 
             //If all other cases -> go to Welcome Conversation
             $bot->startConversation(new WelcomeConversation());
-
             return;
         });
 
@@ -55,19 +53,32 @@ class BotController extends BaseController
         if ($messageLower == "/deleteme") {
             User::destroy(Auth::id());
             $bot->reply(__('main.commands.deleteme.success'));
-        } elseif ($messageLower == '/stop') {
+            return;
+        }
+
+        if ($messageLower == '/stop') {
             $bot->reply(__('main.commands.stop.answer'));
-        } elseif ($messageLower == "/debuginfo") {
+            return;
+        }
+
+        if ($messageLower == "/debuginfo") {
             $debugInfo = print_r($bot->getUser(), true);
             $bot->reply($debugInfo);
-        } elseif (
+            return;
+        }
+
+        if (
             preg_match(__('main.commands.start.pattern'), $messageLower)
             || preg_match(__('main.commands.settings.pattern'), $messageLower)
         ) {
             $bot->startConversation(new WelcomeConversation());
-        } else {
-            $bot->reply(__('main.commands.unknown'));
+            return;
         }
+
+        //If we got here, we do not know, what to do -> let the user know
+        $bot->reply(__('main.commands.unknown'));
+        return;
+
         /*
         $botman->hears('testsend', function (BotMan $bot) {
             $bot->say(
