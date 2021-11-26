@@ -5,10 +5,8 @@ on:
     branches:
       - "master"
   pull_request:
-    paths:
-      - "**.css"
-      - "**.js"
-      - "**.vue"
+    paths-ignore:
+      - "**.php"
 
 jobs:
   prettier:
