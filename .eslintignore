@@ -17,3 +17,4 @@ artisan
 package-lock.json
 package.json
 /public/js/app.js
+/public/vendor
