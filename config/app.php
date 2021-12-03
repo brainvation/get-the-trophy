@@ -174,6 +174,7 @@ return [
         // GetTheTrophy\Providers\BroadcastServiceProvider::class,
         GetTheTrophy\Providers\EventServiceProvider::class,
         GetTheTrophy\Providers\RouteServiceProvider::class,
+        GetTheTrophy\Providers\TelescopeServiceProvider::class,
 
     ],
 
