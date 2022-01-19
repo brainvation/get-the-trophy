@@ -15,7 +15,7 @@
         "axios": "^0.24",
         "eslint": "^8.7.0",
         "eslint-config-google": "^0.14.0",
-        "laravel-mix": "^6.0.6",
+        "laravel-mix": "^6.0.41",
         "lodash": "^4.17.19",
         "postcss": "^8.4.5"
     }
