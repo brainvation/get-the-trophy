@@ -11,7 +11,7 @@
     },
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^5.10.0",
-        "@typescript-eslint/parser": "^5.10.0",
+        "@typescript-eslint/parser": "^5.10.2",
         "axios": "^0.25",
         "eslint": "^8.7.0",
         "eslint-config-google": "^0.14.0",
