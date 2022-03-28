@@ -13,7 +13,7 @@
         "@typescript-eslint/eslint-plugin": "^5.16.0",
         "@typescript-eslint/parser": "^5.16.0",
         "axios": "^0.26",
-        "eslint": "^8.11.0",
+        "eslint": "^8.12.0",
         "eslint-config-google": "^0.14.0",
         "laravel-mix": "^6.0.43",
         "lodash": "^4.17.19",
