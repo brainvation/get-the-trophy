@@ -24,7 +24,7 @@
 
     "require": {
         "php": "^8.0",
-        "botman/driver-telegram": "^1.6",
+        "botman/driver-telegram": "^2.0",
         "botman/driver-web": "^1.5",
         "doctrine/dbal": "^3.0",
         "fideloper/proxy": "^4.4",

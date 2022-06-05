@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e0e9ff40e754087f08a0b909b7942fff",
+    "content-hash": "c0cd2aea846f5efc563f70dbc0fafe6b",
     "packages": [
         {
             "name": "botman/botman",
@@ -88,25 +88,25 @@
         },
         {
             "name": "botman/driver-telegram",
-            "version": "1.6.2",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/botman/driver-telegram.git",
-                "reference": "a26872d971878b8e7163019036299a2eac2794a2"
+                "reference": "b3b131e2c9580ad088f9d8dc017a131c16734336"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/botman/driver-telegram/zipball/a26872d971878b8e7163019036299a2eac2794a2",
-                "reference": "a26872d971878b8e7163019036299a2eac2794a2",
+                "url": "https://api.github.com/repos/botman/driver-telegram/zipball/b3b131e2c9580ad088f9d8dc017a131c16734336",
+                "reference": "b3b131e2c9580ad088f9d8dc017a131c16734336",
                 "shasum": ""
             },
             "require": {
                 "botman/botman": "^2.0",
+                "ext-curl": "*",
                 "php": ">=7.0"
             },
             "require-dev": {
                 "botman/studio-addons": "^1.0",
-                "ext-curl": "*",
                 "illuminate/contracts": "^5.5",
                 "mockery/mockery": "^1.1",
                 "phpunit/phpunit": "^5.0"
@@ -143,9 +143,9 @@
             ],
             "support": {
                 "issues": "https://github.com/botman/driver-telegram/issues",
-                "source": "https://github.com/botman/driver-telegram/tree/1.6.2"
+                "source": "https://github.com/botman/driver-telegram/tree/v2.0.0"
             },
-            "time": "2020-09-24T03:40:55+00:00"
+            "time": "2022-06-04T06:48:43+00:00"
         },
         {
             "name": "botman/driver-web",
