@@ -19,8 +19,15 @@
     "support":{
         "email": "apps+get-the-trophy@brainvation.de"
     },
-    "license": "proprietary",
-    "homepage": "https://get-the-trophy.bvhost.de",
+    "license": "AGPL-3.0",
+    "homepage": "https://get-the-trophy.bvapps.de",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/brainvation/botman-studio-addons"
+        }
+    ],
+  
 
     "require": {
         "php": "^8.0",
@@ -43,7 +50,8 @@
         "laravel/tinker": "^2.5",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^5.10",
-        "phpunit/phpunit": "^9.5.10"
+        "phpunit/phpunit": "^9.5.10",
+        "botman/studio-addons": "dev-master"
     },
     "config": {
         "optimize-autoloader": true,
