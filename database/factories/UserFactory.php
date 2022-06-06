@@ -22,10 +22,10 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->firstName,
+            'name' => $this->faker->firstName(),
             'privacy_consent' => true,
             'external_service' => 'Web',
-            'external_id' => $this->faker->randomNumber,
+            'external_id' => $this->faker->randomNumber(),
         ];
     }
 }
