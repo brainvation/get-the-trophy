@@ -11,9 +11,8 @@ class InitialSetupTest extends TestCase
 
     public function testHappyFlow()
     {
-        TODO
-         $this->bot
+        $this->bot
             ->receives('Hi')
-            ->assertReply('x');
+            ->assertReply(__("conversations/welcome.greeting.new"));
     }
 }
