@@ -8,7 +8,6 @@
     "authors": [
         {
             "name": "Patrick Hessinger",
-            "email": "patrick.hessinger@brainvation.de",
             "role": "Developer"
         },
         {
@@ -17,7 +16,7 @@
         }
     ],
     "support":{
-        "email": "apps+get-the-trophy@brainvation.de"
+        "email": "get-the-trophy@bvapps.de"
     },
     "license": "proprietary",
     "homepage": "https://get-the-trophy.bvhost.de",
