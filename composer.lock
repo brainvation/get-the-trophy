@@ -88,16 +88,16 @@
         },
         {
             "name": "botman/driver-telegram",
-            "version": "v2.0.0",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/botman/driver-telegram.git",
-                "reference": "b3b131e2c9580ad088f9d8dc017a131c16734336"
+                "reference": "fff349743d97e72b2bd562f4577f5e0811eaa31d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/botman/driver-telegram/zipball/b3b131e2c9580ad088f9d8dc017a131c16734336",
-                "reference": "b3b131e2c9580ad088f9d8dc017a131c16734336",
+                "url": "https://api.github.com/repos/botman/driver-telegram/zipball/fff349743d97e72b2bd562f4577f5e0811eaa31d",
+                "reference": "fff349743d97e72b2bd562f4577f5e0811eaa31d",
                 "shasum": ""
             },
             "require": {
@@ -143,9 +143,9 @@
             ],
             "support": {
                 "issues": "https://github.com/botman/driver-telegram/issues",
-                "source": "https://github.com/botman/driver-telegram/tree/v2.0.0"
+                "source": "https://github.com/botman/driver-telegram/tree/v2.0.3"
             },
-            "time": "2022-06-04T06:48:43+00:00"
+            "time": "2022-06-04T08:12:07+00:00"
         },
         {
             "name": "botman/driver-web",
@@ -10337,5 +10337,5 @@
         "php": "^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }
