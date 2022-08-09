@@ -20,8 +20,9 @@ jobs:
           coverage: xdebug
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-      - name: Install Dependencies (PHP)
+      - name: Set explicitly allowed plugins (PHP)
         run: composer config --no-plugins allow-plugins.thecodingmachine/discovery true
+      - name: Install Dependencies (PHP)
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
       - name: Install Dependencies (NPM)
         run: npm ci
