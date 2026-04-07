@@ -32,7 +32,7 @@ jobs:
           
 
       - name: Determine Changes and commit
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: Apply eslint fixes
           commit_user_name: brainvation Bot
