@@ -37,7 +37,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "hashids/hashids": "^4.1",
         "laravel/framework": "^9.17",
-        "laravel/telescope": "^4.9"
+        "laravel/telescope": "^5.20"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",
